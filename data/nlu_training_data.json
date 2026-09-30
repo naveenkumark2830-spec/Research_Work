@@ -1,0 +1,5369 @@
+[
+  {
+    "id": "nlu_0001",
+    "student_input": "I have 5 GB of web server logs. Can you compute the average of a numeric field per group using Hadoop?",
+    "interpretation": {
+      "workload_type": "average_metric",
+      "input_data_type": "web server logs",
+      "input_size_gb": 5,
+      "framework": "MapReduce",
+      "operation": "average_metric",
+      "block_size_mb": 128,
+      "replication_factor": 3,
+      "required_components": [
+        "HDFS",
+        "YARN",
+        "MapReduce"
+      ],
+      "expected_stages": [
+        "HDFS_split",
+        "block_distribution",
+        "replication",
+        "map",
+        "shuffle_sort",
+        "reduce",
+        "output_write"
+      ]
+    }
+  },
+  {
+    "id": "nlu_0002",
+    "student_input": "Process a 5 GB IoT telemetry dataset using Hadoop MapReduce and count word frequency.",
+    "interpretation": {
+      "workload_type": "word_count",
+      "input_data_type": "IoT telemetry",
+      "input_size_gb": 5,
+      "framework": "MapReduce",
+      "operation": "word_count",
+      "block_size_mb": 128,
+      "replication_factor": 3,
+      "required_components": [
+        "HDFS",
+        "YARN",
+        "MapReduce"
+      ],
+      "expected_stages": [
+        "HDFS_split",
+        "block_distribution",
+        "replication",
+        "map",
+        "shuffle_sort",
+        "reduce",
+        "output_write"
+      ]
+    }
+  },
+  {
+    "id": "nlu_0003",
+    "student_input": "I have 20 GB of IoT telemetry. Can you join two datasets and summarize using Hadoop?",
+    "interpretation": {
+      "workload_type": "join_summary",
+      "input_data_type": "IoT telemetry",
+      "input_size_gb": 20,
+      "framework": "MapReduce",
+      "operation": "join_summary",
+      "block_size_mb": 128,
+      "replication_factor": 3,
+      "required_components": [
+        "HDFS",
+        "MapReduce"
+      ],
+      "expected_stages": [
+        "HDFS_split",
+        "block_distribution",
+        "replication",
+        "map",
+        "shuffle_sort",
+        "reduce",
+        "output_write"
+      ]
+    }
+  },
+  {
+    "id": "nlu_0004",
+    "student_input": "Use HDFS and MapReduce to count ERROR records per application on a 750 GB social media posts file.",
+    "interpretation": {
+      "workload_type": "error_count",
+      "input_data_type": "social media posts",
+      "input_size_gb": 750,
+      "framework": "MapReduce",
+      "operation": "error_count",
+      "block_size_mb": 128,
+      "replication_factor": 3,
+      "required_components": [
+        "HDFS",
+        "YARN",
+        "MapReduce"
+      ],
+      "expected_stages": [
+        "HDFS_split",
+        "block_distribution",
+        "replication",
+        "map",
+        "shuffle_sort",
+        "reduce",
+        "output_write"
+      ]
+    }
+  },
+  {
+    "id": "nlu_0005",
+    "student_input": "Use HDFS and MapReduce to compute the average of a numeric field per group on a 1 GB CSV sales records file.",
+    "interpretation": {
+      "workload_type": "average_metric",
+      "input_data_type": "CSV sales records",
+      "input_size_gb": 1,
+      "framework": "MapReduce",
+      "operation": "average_metric",
+      "block_size_mb": 128,
+      "replication_factor": 3,
+      "required_components": [
+        "HDFS",
+        "YARN",
+        "MapReduce"
+      ],
+      "expected_stages": [
+        "HDFS_split",
+        "block_distribution",
+        "replication",
+        "map",
+        "shuffle_sort",
+        "reduce",
+        "output_write"
+      ]
+    }
+  },
+  {
+    "id": "nlu_0006",
+    "student_input": "Use HDFS and MapReduce to count word frequency on a 100 GB application error logs file.",
+    "interpretation": {
+      "workload_type": "word_count",
+      "input_data_type": "application error logs",
+      "input_size_gb": 100,
+      "framework": "MapReduce",
+      "operation": "word_count",
+      "block_size_mb": 128,
+      "replication_factor": 3,
+      "required_components": [
+        "HDFS",
+        "YARN",
+        "MapReduce"
+      ],
+      "expected_stages": [
+        "HDFS_split",
+        "block_distribution",
+        "replication",
+        "map",
+        "shuffle_sort",
+        "reduce",
+        "output_write"
+      ]
+    }
+  },
+  {
+    "id": "nlu_0007",
+    "student_input": "Load 100 GB of e-commerce order logs into HDFS with block size 256 MB and filter records and aggregate by category.",
+    "interpretation": {
+      "workload_type": "filter_aggregate",
+      "input_data_type": "e-commerce order logs",
+      "input_size_gb": 100,
+      "framework": "MapReduce",
+      "operation": "filter_aggregate",
+      "block_size_mb": 256,
+      "replication_factor": 3,
+      "required_components": [
+        "HDFS",
+        "YARN",
+        "MapReduce"
+      ],
+      "expected_stages": [
+        "HDFS_split",
+        "block_distribution",
+        "replication",
+        "map",
+        "shuffle_sort",
+        "reduce",
+        "output_write"
+      ]
+    }
+  },
+  {
+    "id": "nlu_0008",
+    "student_input": "Use HDFS and MapReduce to find the top N most frequent items on a 750 GB application error logs file.",
+    "interpretation": {
+      "workload_type": "top_n",
+      "input_data_type": "application error logs",
+      "input_size_gb": 750,
+      "framework": "MapReduce",
+      "operation": "top_n",
+      "block_size_mb": 128,
+      "replication_factor": 3,
+      "required_components": [
+        "HDFS",
+        "YARN",
+        "MapReduce"
+      ],
+      "expected_stages": [
+        "HDFS_split",
+        "block_distribution",
+        "replication",
+        "map",
+        "shuffle_sort",
+        "reduce",
+        "output_write"
+      ]
+    }
+  },
+  {
+    "id": "nlu_0009",
+    "student_input": "Process a 1000 GB clickstream data dataset using Hadoop MapReduce and join two datasets and summarize.",
+    "interpretation": {
+      "workload_type": "join_summary",
+      "input_data_type": "clickstream data",
+      "input_size_gb": 1000,
+      "framework": "MapReduce",
+      "operation": "join_summary",
+      "block_size_mb": 128,
+      "replication_factor": 3,
+      "required_components": [
+        "HDFS",
+        "YARN",
+        "MapReduce"
+      ],
+      "expected_stages": [
+        "HDFS_split",
+        "block_distribution",
+        "replication",
+        "map",
+        "shuffle_sort",
+        "reduce",
+        "output_write"
+      ]
+    }
+  },
+  {
+    "id": "nlu_0010",
+    "student_input": "Process a 1 GB text corpus dataset using Hadoop MapReduce and filter records and aggregate by category.",
+    "interpretation": {
+      "workload_type": "filter_aggregate",
+      "input_data_type": "text corpus",
+      "input_size_gb": 1,
+      "framework": "MapReduce",
+      "operation": "filter_aggregate",
+      "block_size_mb": 128,
+      "replication_factor": 3,
+      "required_components": [
+        "HDFS",
+        "YARN",
+        "MapReduce"
+      ],
+      "expected_stages": [
+        "HDFS_split",
+        "block_distribution",
+        "replication",
+        "map",
+        "shuffle_sort",
+        "reduce",
+        "output_write"
+      ]
+    }
+  },
+  {
+    "id": "nlu_0011",
+    "student_input": "I have 500 GB of clickstream data. Can you count ERROR records per application using Hadoop?",
+    "interpretation": {
+      "workload_type": "error_count",
+      "input_data_type": "clickstream data",
+      "input_size_gb": 500,
+      "framework": "MapReduce",
+      "operation": "error_count",
+      "block_size_mb": 128,
+      "replication_factor": 3,
+      "required_components": [
+        "HDFS",
+        "YARN",
+        "MapReduce"
+      ],
+      "expected_stages": [
+        "HDFS_split",
+        "block_distribution",
+        "replication",
+        "map",
+        "shuffle_sort",
+        "reduce",
+        "output_write"
+      ]
+    }
+  },
+  {
+    "id": "nlu_0012",
+    "student_input": "What happens if I join two datasets and summarize on 50 GB of application error logs using MapReduce?",
+    "interpretation": {
+      "workload_type": "join_summary",
+      "input_data_type": "application error logs",
+      "input_size_gb": 50,
+      "framework": "MapReduce",
+      "operation": "join_summary",
+      "block_size_mb": 128,
+      "replication_factor": 3,
+      "required_components": [
+        "HDFS",
+        "YARN",
+        "MapReduce"
+      ],
+      "expected_stages": [
+        "HDFS_split",
+        "block_distribution",
+        "replication",
+        "map",
+        "shuffle_sort",
+        "reduce",
+        "output_write"
+      ]
+    }
+  },
+  {
+    "id": "nlu_0013",
+    "student_input": "What happens if I find the top N most frequent items on 20 GB of CSV sales records using MapReduce?",
+    "interpretation": {
+      "workload_type": "top_n",
+      "input_data_type": "CSV sales records",
+      "input_size_gb": 20,
+      "framework": "MapReduce",
+      "operation": "top_n",
+      "block_size_mb": 128,
+      "replication_factor": 3,
+      "required_components": [
+        "HDFS",
+        "MapReduce"
+      ],
+      "expected_stages": [
+        "HDFS_split",
+        "block_distribution",
+        "replication",
+        "map",
+        "shuffle_sort",
+        "reduce",
+        "output_write"
+      ]
+    }
+  },
+  {
+    "id": "nlu_0014",
+    "student_input": "Use HDFS and MapReduce to count word frequency on a 20 GB clickstream data file.",
+    "interpretation": {
+      "workload_type": "word_count",
+      "input_data_type": "clickstream data",
+      "input_size_gb": 20,
+      "framework": "MapReduce",
+      "operation": "word_count",
+      "block_size_mb": 128,
+      "replication_factor": 3,
+      "required_components": [
+        "HDFS",
+        "YARN",
+        "MapReduce"
+      ],
+      "expected_stages": [
+        "HDFS_split",
+        "block_distribution",
+        "replication",
+        "map",
+        "shuffle_sort",
+        "reduce",
+        "output_write"
+      ]
+    }
+  },
+  {
+    "id": "nlu_0015",
+    "student_input": "What happens if I join two datasets and summarize on 5 GB of text corpus using MapReduce?",
+    "interpretation": {
+      "workload_type": "join_summary",
+      "input_data_type": "text corpus",
+      "input_size_gb": 5,
+      "framework": "MapReduce",
+      "operation": "join_summary",
+      "block_size_mb": 128,
+      "replication_factor": 3,
+      "required_components": [
+        "HDFS",
+        "YARN",
+        "MapReduce"
+      ],
+      "expected_stages": [
+        "HDFS_split",
+        "block_distribution",
+        "replication",
+        "map",
+        "shuffle_sort",
+        "reduce",
+        "output_write"
+      ]
+    }
+  },
+  {
+    "id": "nlu_0016",
+    "student_input": "What happens if I filter records and aggregate by category on 500 GB of CSV sales records using MapReduce?",
+    "interpretation": {
+      "workload_type": "filter_aggregate",
+      "input_data_type": "CSV sales records",
+      "input_size_gb": 500,
+      "framework": "MapReduce",
+      "operation": "filter_aggregate",
+      "block_size_mb": 128,
+      "replication_factor": 3,
+      "required_components": [
+        "HDFS",
+        "YARN",
+        "MapReduce"
+      ],
+      "expected_stages": [
+        "HDFS_split",
+        "block_distribution",
+        "replication",
+        "map",
+        "shuffle_sort",
+        "reduce",
+        "output_write"
+      ]
+    }
+  },
+  {
+    "id": "nlu_0017",
+    "student_input": "Load 750 GB of IoT telemetry into HDFS with block size 256 MB and filter records and aggregate by category.",
+    "interpretation": {
+      "workload_type": "filter_aggregate",
+      "input_data_type": "IoT telemetry",
+      "input_size_gb": 750,
+      "framework": "MapReduce",
+      "operation": "filter_aggregate",
+      "block_size_mb": 256,
+      "replication_factor": 3,
+      "required_components": [
+        "HDFS",
+        "YARN",
+        "MapReduce"
+      ],
+      "expected_stages": [
+        "HDFS_split",
+        "block_distribution",
+        "replication",
+        "map",
+        "shuffle_sort",
+        "reduce",
+        "output_write"
+      ]
+    }
+  },
+  {
+    "id": "nlu_0018",
+    "student_input": "Process a 100 GB text corpus dataset using Hadoop MapReduce and count ERROR records per application.",
+    "interpretation": {
+      "workload_type": "error_count",
+      "input_data_type": "text corpus",
+      "input_size_gb": 100,
+      "framework": "MapReduce",
+      "operation": "error_count",
+      "block_size_mb": 128,
+      "replication_factor": 3,
+      "required_components": [
+        "HDFS",
+        "YARN",
+        "MapReduce"
+      ],
+      "expected_stages": [
+        "HDFS_split",
+        "block_distribution",
+        "replication",
+        "map",
+        "shuffle_sort",
+        "reduce",
+        "output_write"
+      ]
+    }
+  },
+  {
+    "id": "nlu_0019",
+    "student_input": "Load 5 GB of CSV sales records into HDFS with block size 256 MB and compute the average of a numeric field per group.",
+    "interpretation": {
+      "workload_type": "average_metric",
+      "input_data_type": "CSV sales records",
+      "input_size_gb": 5,
+      "framework": "MapReduce",
+      "operation": "average_metric",
+      "block_size_mb": 256,
+      "replication_factor": 3,
+      "required_components": [
+        "HDFS",
+        "YARN",
+        "MapReduce"
+      ],
+      "expected_stages": [
+        "HDFS_split",
+        "block_distribution",
+        "replication",
+        "map",
+        "shuffle_sort",
+        "reduce",
+        "output_write"
+      ]
+    }
+  },
+  {
+    "id": "nlu_0020",
+    "student_input": "Use HDFS and MapReduce to join two datasets and summarize on a 200 GB social media posts file.",
+    "interpretation": {
+      "workload_type": "join_summary",
+      "input_data_type": "social media posts",
+      "input_size_gb": 200,
+      "framework": "MapReduce",
+      "operation": "join_summary",
+      "block_size_mb": 128,
+      "replication_factor": 3,
+      "required_components": [
+        "HDFS",
+        "YARN",
+        "MapReduce"
+      ],
+      "expected_stages": [
+        "HDFS_split",
+        "block_distribution",
+        "replication",
+        "map",
+        "shuffle_sort",
+        "reduce",
+        "output_write"
+      ]
+    }
+  },
+  {
+    "id": "nlu_0021",
+    "student_input": "Run a Hadoop job on 750 GB web server logs to compute the average of a numeric field per group, with replication factor 2.",
+    "interpretation": {
+      "workload_type": "average_metric",
+      "input_data_type": "web server logs",
+      "input_size_gb": 750,
+      "framework": "MapReduce",
+      "operation": "average_metric",
+      "block_size_mb": 128,
+      "replication_factor": 2,
+      "required_components": [
+        "HDFS",
+        "YARN",
+        "MapReduce"
+      ],
+      "expected_stages": [
+        "HDFS_split",
+        "block_distribution",
+        "replication",
+        "map",
+        "shuffle_sort",
+        "reduce",
+        "output_write"
+      ]
+    }
+  },
+  {
+    "id": "nlu_0022",
+    "student_input": "I have 50 GB of clickstream data. Can you count word frequency using Hadoop?",
+    "interpretation": {
+      "workload_type": "word_count",
+      "input_data_type": "clickstream data",
+      "input_size_gb": 50,
+      "framework": "MapReduce",
+      "operation": "word_count",
+      "block_size_mb": 128,
+      "replication_factor": 3,
+      "required_components": [
+        "HDFS",
+        "YARN",
+        "MapReduce"
+      ],
+      "expected_stages": [
+        "HDFS_split",
+        "block_distribution",
+        "replication",
+        "map",
+        "shuffle_sort",
+        "reduce",
+        "output_write"
+      ]
+    }
+  },
+  {
+    "id": "nlu_0023",
+    "student_input": "I have 500 GB of web server logs. Can you compute the average of a numeric field per group using Hadoop?",
+    "interpretation": {
+      "workload_type": "average_metric",
+      "input_data_type": "web server logs",
+      "input_size_gb": 500,
+      "framework": "MapReduce",
+      "operation": "average_metric",
+      "block_size_mb": 128,
+      "replication_factor": 3,
+      "required_components": [
+        "HDFS",
+        "YARN",
+        "MapReduce"
+      ],
+      "expected_stages": [
+        "HDFS_split",
+        "block_distribution",
+        "replication",
+        "map",
+        "shuffle_sort",
+        "reduce",
+        "output_write"
+      ]
+    }
+  },
+  {
+    "id": "nlu_0024",
+    "student_input": "Run a Hadoop job on 750 GB application error logs to compute the average of a numeric field per group, with replication factor 3.",
+    "interpretation": {
+      "workload_type": "average_metric",
+      "input_data_type": "application error logs",
+      "input_size_gb": 750,
+      "framework": "MapReduce",
+      "operation": "average_metric",
+      "block_size_mb": 128,
+      "replication_factor": 3,
+      "required_components": [
+        "HDFS",
+        "YARN",
+        "MapReduce"
+      ],
+      "expected_stages": [
+        "HDFS_split",
+        "block_distribution",
+        "replication",
+        "map",
+        "shuffle_sort",
+        "reduce",
+        "output_write"
+      ]
+    }
+  },
+  {
+    "id": "nlu_0025",
+    "student_input": "Run a Hadoop job on 1000 GB text corpus to count ERROR records per application, with replication factor 3.",
+    "interpretation": {
+      "workload_type": "error_count",
+      "input_data_type": "text corpus",
+      "input_size_gb": 1000,
+      "framework": "MapReduce",
+      "operation": "error_count",
+      "block_size_mb": 128,
+      "replication_factor": 3,
+      "required_components": [
+        "HDFS",
+        "YARN",
+        "MapReduce"
+      ],
+      "expected_stages": [
+        "HDFS_split",
+        "block_distribution",
+        "replication",
+        "map",
+        "shuffle_sort",
+        "reduce",
+        "output_write"
+      ]
+    }
+  },
+  {
+    "id": "nlu_0026",
+    "student_input": "Process a 750 GB web server logs dataset using Hadoop MapReduce and join two datasets and summarize.",
+    "interpretation": {
+      "workload_type": "join_summary",
+      "input_data_type": "web server logs",
+      "input_size_gb": 750,
+      "framework": "MapReduce",
+      "operation": "join_summary",
+      "block_size_mb": 128,
+      "replication_factor": 3,
+      "required_components": [
+        "HDFS",
+        "YARN",
+        "MapReduce"
+      ],
+      "expected_stages": [
+        "HDFS_split",
+        "block_distribution",
+        "replication",
+        "map",
+        "shuffle_sort",
+        "reduce",
+        "output_write"
+      ]
+    }
+  },
+  {
+    "id": "nlu_0027",
+    "student_input": "I have 5 GB of clickstream data. Can you filter records and aggregate by category using Hadoop?",
+    "interpretation": {
+      "workload_type": "filter_aggregate",
+      "input_data_type": "clickstream data",
+      "input_size_gb": 5,
+      "framework": "MapReduce",
+      "operation": "filter_aggregate",
+      "block_size_mb": 128,
+      "replication_factor": 3,
+      "required_components": [
+        "HDFS",
+        "MapReduce"
+      ],
+      "expected_stages": [
+        "HDFS_split",
+        "block_distribution",
+        "replication",
+        "map",
+        "shuffle_sort",
+        "reduce",
+        "output_write"
+      ]
+    }
+  },
+  {
+    "id": "nlu_0028",
+    "student_input": "Run a Hadoop job on 5 GB application error logs to compute the average of a numeric field per group, with replication factor 3.",
+    "interpretation": {
+      "workload_type": "average_metric",
+      "input_data_type": "application error logs",
+      "input_size_gb": 5,
+      "framework": "MapReduce",
+      "operation": "average_metric",
+      "block_size_mb": 128,
+      "replication_factor": 3,
+      "required_components": [
+        "HDFS",
+        "MapReduce"
+      ],
+      "expected_stages": [
+        "HDFS_split",
+        "block_distribution",
+        "replication",
+        "map",
+        "shuffle_sort",
+        "reduce",
+        "output_write"
+      ]
+    }
+  },
+  {
+    "id": "nlu_0029",
+    "student_input": "Run a Hadoop job on 10 GB financial transactions to join two datasets and summarize, with replication factor 2.",
+    "interpretation": {
+      "workload_type": "join_summary",
+      "input_data_type": "financial transactions",
+      "input_size_gb": 10,
+      "framework": "MapReduce",
+      "operation": "join_summary",
+      "block_size_mb": 128,
+      "replication_factor": 2,
+      "required_components": [
+        "HDFS",
+        "MapReduce"
+      ],
+      "expected_stages": [
+        "HDFS_split",
+        "block_distribution",
+        "replication",
+        "map",
+        "shuffle_sort",
+        "reduce",
+        "output_write"
+      ]
+    }
+  },
+  {
+    "id": "nlu_0030",
+    "student_input": "Use HDFS and MapReduce to join two datasets and summarize on a 200 GB text corpus file.",
+    "interpretation": {
+      "workload_type": "join_summary",
+      "input_data_type": "text corpus",
+      "input_size_gb": 200,
+      "framework": "MapReduce",
+      "operation": "join_summary",
+      "block_size_mb": 128,
+      "replication_factor": 3,
+      "required_components": [
+        "HDFS",
+        "YARN",
+        "MapReduce"
+      ],
+      "expected_stages": [
+        "HDFS_split",
+        "block_distribution",
+        "replication",
+        "map",
+        "shuffle_sort",
+        "reduce",
+        "output_write"
+      ]
+    }
+  },
+  {
+    "id": "nlu_0031",
+    "student_input": "I have 200 GB of clickstream data. Can you find the top N most frequent items using Hadoop?",
+    "interpretation": {
+      "workload_type": "top_n",
+      "input_data_type": "clickstream data",
+      "input_size_gb": 200,
+      "framework": "MapReduce",
+      "operation": "top_n",
+      "block_size_mb": 128,
+      "replication_factor": 3,
+      "required_components": [
+        "HDFS",
+        "YARN",
+        "MapReduce"
+      ],
+      "expected_stages": [
+        "HDFS_split",
+        "block_distribution",
+        "replication",
+        "map",
+        "shuffle_sort",
+        "reduce",
+        "output_write"
+      ]
+    }
+  },
+  {
+    "id": "nlu_0032",
+    "student_input": "Run a Hadoop job on 20 GB application error logs to filter records and aggregate by category, with replication factor 2.",
+    "interpretation": {
+      "workload_type": "filter_aggregate",
+      "input_data_type": "application error logs",
+      "input_size_gb": 20,
+      "framework": "MapReduce",
+      "operation": "filter_aggregate",
+      "block_size_mb": 128,
+      "replication_factor": 2,
+      "required_components": [
+        "HDFS",
+        "YARN",
+        "MapReduce"
+      ],
+      "expected_stages": [
+        "HDFS_split",
+        "block_distribution",
+        "replication",
+        "map",
+        "shuffle_sort",
+        "reduce",
+        "output_write"
+      ]
+    }
+  },
+  {
+    "id": "nlu_0033",
+    "student_input": "Process a 20 GB web server logs dataset using Hadoop MapReduce and count word frequency.",
+    "interpretation": {
+      "workload_type": "word_count",
+      "input_data_type": "web server logs",
+      "input_size_gb": 20,
+      "framework": "MapReduce",
+      "operation": "word_count",
+      "block_size_mb": 128,
+      "replication_factor": 3,
+      "required_components": [
+        "HDFS",
+        "MapReduce"
+      ],
+      "expected_stages": [
+        "HDFS_split",
+        "block_distribution",
+        "replication",
+        "map",
+        "shuffle_sort",
+        "reduce",
+        "output_write"
+      ]
+    }
+  },
+  {
+    "id": "nlu_0034",
+    "student_input": "What happens if I join two datasets and summarize on 100 GB of application error logs using MapReduce?",
+    "interpretation": {
+      "workload_type": "join_summary",
+      "input_data_type": "application error logs",
+      "input_size_gb": 100,
+      "framework": "MapReduce",
+      "operation": "join_summary",
+      "block_size_mb": 128,
+      "replication_factor": 3,
+      "required_components": [
+        "HDFS",
+        "YARN",
+        "MapReduce"
+      ],
+      "expected_stages": [
+        "HDFS_split",
+        "block_distribution",
+        "replication",
+        "map",
+        "shuffle_sort",
+        "reduce",
+        "output_write"
+      ]
+    }
+  },
+  {
+    "id": "nlu_0035",
+    "student_input": "Run a Hadoop job on 500 GB text corpus to join two datasets and summarize, with replication factor 2.",
+    "interpretation": {
+      "workload_type": "join_summary",
+      "input_data_type": "text corpus",
+      "input_size_gb": 500,
+      "framework": "MapReduce",
+      "operation": "join_summary",
+      "block_size_mb": 128,
+      "replication_factor": 2,
+      "required_components": [
+        "HDFS",
+        "YARN",
+        "MapReduce"
+      ],
+      "expected_stages": [
+        "HDFS_split",
+        "block_distribution",
+        "replication",
+        "map",
+        "shuffle_sort",
+        "reduce",
+        "output_write"
+      ]
+    }
+  },
+  {
+    "id": "nlu_0036",
+    "student_input": "I have 1000 GB of financial transactions. Can you count ERROR records per application using Hadoop?",
+    "interpretation": {
+      "workload_type": "error_count",
+      "input_data_type": "financial transactions",
+      "input_size_gb": 1000,
+      "framework": "MapReduce",
+      "operation": "error_count",
+      "block_size_mb": 128,
+      "replication_factor": 3,
+      "required_components": [
+        "HDFS",
+        "YARN",
+        "MapReduce"
+      ],
+      "expected_stages": [
+        "HDFS_split",
+        "block_distribution",
+        "replication",
+        "map",
+        "shuffle_sort",
+        "reduce",
+        "output_write"
+      ]
+    }
+  },
+  {
+    "id": "nlu_0037",
+    "student_input": "Load 5 GB of application error logs into HDFS with block size 128 MB and compute the average of a numeric field per group.",
+    "interpretation": {
+      "workload_type": "average_metric",
+      "input_data_type": "application error logs",
+      "input_size_gb": 5,
+      "framework": "MapReduce",
+      "operation": "average_metric",
+      "block_size_mb": 128,
+      "replication_factor": 3,
+      "required_components": [
+        "HDFS",
+        "YARN",
+        "MapReduce"
+      ],
+      "expected_stages": [
+        "HDFS_split",
+        "block_distribution",
+        "replication",
+        "map",
+        "shuffle_sort",
+        "reduce",
+        "output_write"
+      ]
+    }
+  },
+  {
+    "id": "nlu_0038",
+    "student_input": "Use HDFS and MapReduce to count word frequency on a 1 GB application error logs file.",
+    "interpretation": {
+      "workload_type": "word_count",
+      "input_data_type": "application error logs",
+      "input_size_gb": 1,
+      "framework": "MapReduce",
+      "operation": "word_count",
+      "block_size_mb": 128,
+      "replication_factor": 3,
+      "required_components": [
+        "HDFS",
+        "MapReduce"
+      ],
+      "expected_stages": [
+        "HDFS_split",
+        "block_distribution",
+        "replication",
+        "map",
+        "shuffle_sort",
+        "reduce",
+        "output_write"
+      ]
+    }
+  },
+  {
+    "id": "nlu_0039",
+    "student_input": "Load 5 GB of text corpus into HDFS with block size 256 MB and count ERROR records per application.",
+    "interpretation": {
+      "workload_type": "error_count",
+      "input_data_type": "text corpus",
+      "input_size_gb": 5,
+      "framework": "MapReduce",
+      "operation": "error_count",
+      "block_size_mb": 256,
+      "replication_factor": 3,
+      "required_components": [
+        "HDFS",
+        "YARN",
+        "MapReduce"
+      ],
+      "expected_stages": [
+        "HDFS_split",
+        "block_distribution",
+        "replication",
+        "map",
+        "shuffle_sort",
+        "reduce",
+        "output_write"
+      ]
+    }
+  },
+  {
+    "id": "nlu_0040",
+    "student_input": "Load 10 GB of sensor readings into HDFS with block size 64 MB and find the top N most frequent items.",
+    "interpretation": {
+      "workload_type": "top_n",
+      "input_data_type": "sensor readings",
+      "input_size_gb": 10,
+      "framework": "MapReduce",
+      "operation": "top_n",
+      "block_size_mb": 64,
+      "replication_factor": 3,
+      "required_components": [
+        "HDFS",
+        "MapReduce"
+      ],
+      "expected_stages": [
+        "HDFS_split",
+        "block_distribution",
+        "replication",
+        "map",
+        "shuffle_sort",
+        "reduce",
+        "output_write"
+      ]
+    }
+  },
+  {
+    "id": "nlu_0041",
+    "student_input": "I have 750 GB of application error logs. Can you count word frequency using Hadoop?",
+    "interpretation": {
+      "workload_type": "word_count",
+      "input_data_type": "application error logs",
+      "input_size_gb": 750,
+      "framework": "MapReduce",
+      "operation": "word_count",
+      "block_size_mb": 128,
+      "replication_factor": 3,
+      "required_components": [
+        "HDFS",
+        "YARN",
+        "MapReduce"
+      ],
+      "expected_stages": [
+        "HDFS_split",
+        "block_distribution",
+        "replication",
+        "map",
+        "shuffle_sort",
+        "reduce",
+        "output_write"
+      ]
+    }
+  },
+  {
+    "id": "nlu_0042",
+    "student_input": "Load 10 GB of social media posts into HDFS with block size 64 MB and find the top N most frequent items.",
+    "interpretation": {
+      "workload_type": "top_n",
+      "input_data_type": "social media posts",
+      "input_size_gb": 10,
+      "framework": "MapReduce",
+      "operation": "top_n",
+      "block_size_mb": 64,
+      "replication_factor": 3,
+      "required_components": [
+        "HDFS",
+        "MapReduce"
+      ],
+      "expected_stages": [
+        "HDFS_split",
+        "block_distribution",
+        "replication",
+        "map",
+        "shuffle_sort",
+        "reduce",
+        "output_write"
+      ]
+    }
+  },
+  {
+    "id": "nlu_0043",
+    "student_input": "Load 10 GB of social media posts into HDFS with block size 128 MB and count word frequency.",
+    "interpretation": {
+      "workload_type": "word_count",
+      "input_data_type": "social media posts",
+      "input_size_gb": 10,
+      "framework": "MapReduce",
+      "operation": "word_count",
+      "block_size_mb": 128,
+      "replication_factor": 3,
+      "required_components": [
+        "HDFS",
+        "YARN",
+        "MapReduce"
+      ],
+      "expected_stages": [
+        "HDFS_split",
+        "block_distribution",
+        "replication",
+        "map",
+        "shuffle_sort",
+        "reduce",
+        "output_write"
+      ]
+    }
+  },
+  {
+    "id": "nlu_0044",
+    "student_input": "I have 750 GB of financial transactions. Can you count ERROR records per application using Hadoop?",
+    "interpretation": {
+      "workload_type": "error_count",
+      "input_data_type": "financial transactions",
+      "input_size_gb": 750,
+      "framework": "MapReduce",
+      "operation": "error_count",
+      "block_size_mb": 128,
+      "replication_factor": 3,
+      "required_components": [
+        "HDFS",
+        "YARN",
+        "MapReduce"
+      ],
+      "expected_stages": [
+        "HDFS_split",
+        "block_distribution",
+        "replication",
+        "map",
+        "shuffle_sort",
+        "reduce",
+        "output_write"
+      ]
+    }
+  },
+  {
+    "id": "nlu_0045",
+    "student_input": "Use HDFS and MapReduce to compute the average of a numeric field per group on a 1 GB e-commerce order logs file.",
+    "interpretation": {
+      "workload_type": "average_metric",
+      "input_data_type": "e-commerce order logs",
+      "input_size_gb": 1,
+      "framework": "MapReduce",
+      "operation": "average_metric",
+      "block_size_mb": 128,
+      "replication_factor": 3,
+      "required_components": [
+        "HDFS",
+        "YARN",
+        "MapReduce"
+      ],
+      "expected_stages": [
+        "HDFS_split",
+        "block_distribution",
+        "replication",
+        "map",
+        "shuffle_sort",
+        "reduce",
+        "output_write"
+      ]
+    }
+  },
+  {
+    "id": "nlu_0046",
+    "student_input": "Run a Hadoop job on 1000 GB financial transactions to join two datasets and summarize, with replication factor 2.",
+    "interpretation": {
+      "workload_type": "join_summary",
+      "input_data_type": "financial transactions",
+      "input_size_gb": 1000,
+      "framework": "MapReduce",
+      "operation": "join_summary",
+      "block_size_mb": 128,
+      "replication_factor": 2,
+      "required_components": [
+        "HDFS",
+        "YARN",
+        "MapReduce"
+      ],
+      "expected_stages": [
+        "HDFS_split",
+        "block_distribution",
+        "replication",
+        "map",
+        "shuffle_sort",
+        "reduce",
+        "output_write"
+      ]
+    }
+  },
+  {
+    "id": "nlu_0047",
+    "student_input": "I have 5 GB of CSV sales records. Can you count word frequency using Hadoop?",
+    "interpretation": {
+      "workload_type": "word_count",
+      "input_data_type": "CSV sales records",
+      "input_size_gb": 5,
+      "framework": "MapReduce",
+      "operation": "word_count",
+      "block_size_mb": 128,
+      "replication_factor": 3,
+      "required_components": [
+        "HDFS",
+        "YARN",
+        "MapReduce"
+      ],
+      "expected_stages": [
+        "HDFS_split",
+        "block_distribution",
+        "replication",
+        "map",
+        "shuffle_sort",
+        "reduce",
+        "output_write"
+      ]
+    }
+  },
+  {
+    "id": "nlu_0048",
+    "student_input": "Process a 1000 GB text corpus dataset using Hadoop MapReduce and join two datasets and summarize.",
+    "interpretation": {
+      "workload_type": "join_summary",
+      "input_data_type": "text corpus",
+      "input_size_gb": 1000,
+      "framework": "MapReduce",
+      "operation": "join_summary",
+      "block_size_mb": 128,
+      "replication_factor": 3,
+      "required_components": [
+        "HDFS",
+        "YARN",
+        "MapReduce"
+      ],
+      "expected_stages": [
+        "HDFS_split",
+        "block_distribution",
+        "replication",
+        "map",
+        "shuffle_sort",
+        "reduce",
+        "output_write"
+      ]
+    }
+  },
+  {
+    "id": "nlu_0049",
+    "student_input": "I have 200 GB of e-commerce order logs. Can you join two datasets and summarize using Hadoop?",
+    "interpretation": {
+      "workload_type": "join_summary",
+      "input_data_type": "e-commerce order logs",
+      "input_size_gb": 200,
+      "framework": "MapReduce",
+      "operation": "join_summary",
+      "block_size_mb": 128,
+      "replication_factor": 3,
+      "required_components": [
+        "HDFS",
+        "YARN",
+        "MapReduce"
+      ],
+      "expected_stages": [
+        "HDFS_split",
+        "block_distribution",
+        "replication",
+        "map",
+        "shuffle_sort",
+        "reduce",
+        "output_write"
+      ]
+    }
+  },
+  {
+    "id": "nlu_0050",
+    "student_input": "What happens if I filter records and aggregate by category on 100 GB of text corpus using MapReduce?",
+    "interpretation": {
+      "workload_type": "filter_aggregate",
+      "input_data_type": "text corpus",
+      "input_size_gb": 100,
+      "framework": "MapReduce",
+      "operation": "filter_aggregate",
+      "block_size_mb": 128,
+      "replication_factor": 3,
+      "required_components": [
+        "HDFS",
+        "YARN",
+        "MapReduce"
+      ],
+      "expected_stages": [
+        "HDFS_split",
+        "block_distribution",
+        "replication",
+        "map",
+        "shuffle_sort",
+        "reduce",
+        "output_write"
+      ]
+    }
+  },
+  {
+    "id": "nlu_0051",
+    "student_input": "Load 50 GB of financial transactions into HDFS with block size 64 MB and filter records and aggregate by category.",
+    "interpretation": {
+      "workload_type": "filter_aggregate",
+      "input_data_type": "financial transactions",
+      "input_size_gb": 50,
+      "framework": "MapReduce",
+      "operation": "filter_aggregate",
+      "block_size_mb": 64,
+      "replication_factor": 3,
+      "required_components": [
+        "HDFS",
+        "YARN",
+        "MapReduce"
+      ],
+      "expected_stages": [
+        "HDFS_split",
+        "block_distribution",
+        "replication",
+        "map",
+        "shuffle_sort",
+        "reduce",
+        "output_write"
+      ]
+    }
+  },
+  {
+    "id": "nlu_0052",
+    "student_input": "I have 1000 GB of e-commerce order logs. Can you count word frequency using Hadoop?",
+    "interpretation": {
+      "workload_type": "word_count",
+      "input_data_type": "e-commerce order logs",
+      "input_size_gb": 1000,
+      "framework": "MapReduce",
+      "operation": "word_count",
+      "block_size_mb": 128,
+      "replication_factor": 3,
+      "required_components": [
+        "HDFS",
+        "YARN",
+        "MapReduce"
+      ],
+      "expected_stages": [
+        "HDFS_split",
+        "block_distribution",
+        "replication",
+        "map",
+        "shuffle_sort",
+        "reduce",
+        "output_write"
+      ]
+    }
+  },
+  {
+    "id": "nlu_0053",
+    "student_input": "I have 750 GB of sensor readings. Can you count ERROR records per application using Hadoop?",
+    "interpretation": {
+      "workload_type": "error_count",
+      "input_data_type": "sensor readings",
+      "input_size_gb": 750,
+      "framework": "MapReduce",
+      "operation": "error_count",
+      "block_size_mb": 128,
+      "replication_factor": 3,
+      "required_components": [
+        "HDFS",
+        "YARN",
+        "MapReduce"
+      ],
+      "expected_stages": [
+        "HDFS_split",
+        "block_distribution",
+        "replication",
+        "map",
+        "shuffle_sort",
+        "reduce",
+        "output_write"
+      ]
+    }
+  },
+  {
+    "id": "nlu_0054",
+    "student_input": "What happens if I count ERROR records per application on 100 GB of sensor readings using MapReduce?",
+    "interpretation": {
+      "workload_type": "error_count",
+      "input_data_type": "sensor readings",
+      "input_size_gb": 100,
+      "framework": "MapReduce",
+      "operation": "error_count",
+      "block_size_mb": 128,
+      "replication_factor": 3,
+      "required_components": [
+        "HDFS",
+        "YARN",
+        "MapReduce"
+      ],
+      "expected_stages": [
+        "HDFS_split",
+        "block_distribution",
+        "replication",
+        "map",
+        "shuffle_sort",
+        "reduce",
+        "output_write"
+      ]
+    }
+  },
+  {
+    "id": "nlu_0055",
+    "student_input": "Run a Hadoop job on 50 GB e-commerce order logs to compute the average of a numeric field per group, with replication factor 2.",
+    "interpretation": {
+      "workload_type": "average_metric",
+      "input_data_type": "e-commerce order logs",
+      "input_size_gb": 50,
+      "framework": "MapReduce",
+      "operation": "average_metric",
+      "block_size_mb": 128,
+      "replication_factor": 2,
+      "required_components": [
+        "HDFS",
+        "YARN",
+        "MapReduce"
+      ],
+      "expected_stages": [
+        "HDFS_split",
+        "block_distribution",
+        "replication",
+        "map",
+        "shuffle_sort",
+        "reduce",
+        "output_write"
+      ]
+    }
+  },
+  {
+    "id": "nlu_0056",
+    "student_input": "Process a 50 GB application error logs dataset using Hadoop MapReduce and count ERROR records per application.",
+    "interpretation": {
+      "workload_type": "error_count",
+      "input_data_type": "application error logs",
+      "input_size_gb": 50,
+      "framework": "MapReduce",
+      "operation": "error_count",
+      "block_size_mb": 128,
+      "replication_factor": 3,
+      "required_components": [
+        "HDFS",
+        "YARN",
+        "MapReduce"
+      ],
+      "expected_stages": [
+        "HDFS_split",
+        "block_distribution",
+        "replication",
+        "map",
+        "shuffle_sort",
+        "reduce",
+        "output_write"
+      ]
+    }
+  },
+  {
+    "id": "nlu_0057",
+    "student_input": "I have 750 GB of CSV sales records. Can you filter records and aggregate by category using Hadoop?",
+    "interpretation": {
+      "workload_type": "filter_aggregate",
+      "input_data_type": "CSV sales records",
+      "input_size_gb": 750,
+      "framework": "MapReduce",
+      "operation": "filter_aggregate",
+      "block_size_mb": 128,
+      "replication_factor": 3,
+      "required_components": [
+        "HDFS",
+        "YARN",
+        "MapReduce"
+      ],
+      "expected_stages": [
+        "HDFS_split",
+        "block_distribution",
+        "replication",
+        "map",
+        "shuffle_sort",
+        "reduce",
+        "output_write"
+      ]
+    }
+  },
+  {
+    "id": "nlu_0058",
+    "student_input": "Load 100 GB of text corpus into HDFS with block size 256 MB and compute the average of a numeric field per group.",
+    "interpretation": {
+      "workload_type": "average_metric",
+      "input_data_type": "text corpus",
+      "input_size_gb": 100,
+      "framework": "MapReduce",
+      "operation": "average_metric",
+      "block_size_mb": 256,
+      "replication_factor": 3,
+      "required_components": [
+        "HDFS",
+        "YARN",
+        "MapReduce"
+      ],
+      "expected_stages": [
+        "HDFS_split",
+        "block_distribution",
+        "replication",
+        "map",
+        "shuffle_sort",
+        "reduce",
+        "output_write"
+      ]
+    }
+  },
+  {
+    "id": "nlu_0059",
+    "student_input": "Process a 50 GB web server logs dataset using Hadoop MapReduce and count word frequency.",
+    "interpretation": {
+      "workload_type": "word_count",
+      "input_data_type": "web server logs",
+      "input_size_gb": 50,
+      "framework": "MapReduce",
+      "operation": "word_count",
+      "block_size_mb": 128,
+      "replication_factor": 3,
+      "required_components": [
+        "HDFS",
+        "YARN",
+        "MapReduce"
+      ],
+      "expected_stages": [
+        "HDFS_split",
+        "block_distribution",
+        "replication",
+        "map",
+        "shuffle_sort",
+        "reduce",
+        "output_write"
+      ]
+    }
+  },
+  {
+    "id": "nlu_0060",
+    "student_input": "What happens if I count ERROR records per application on 1 GB of clickstream data using MapReduce?",
+    "interpretation": {
+      "workload_type": "error_count",
+      "input_data_type": "clickstream data",
+      "input_size_gb": 1,
+      "framework": "MapReduce",
+      "operation": "error_count",
+      "block_size_mb": 128,
+      "replication_factor": 3,
+      "required_components": [
+        "HDFS",
+        "YARN",
+        "MapReduce"
+      ],
+      "expected_stages": [
+        "HDFS_split",
+        "block_distribution",
+        "replication",
+        "map",
+        "shuffle_sort",
+        "reduce",
+        "output_write"
+      ]
+    }
+  },
+  {
+    "id": "nlu_0061",
+    "student_input": "What happens if I count word frequency on 200 GB of IoT telemetry using MapReduce?",
+    "interpretation": {
+      "workload_type": "word_count",
+      "input_data_type": "IoT telemetry",
+      "input_size_gb": 200,
+      "framework": "MapReduce",
+      "operation": "word_count",
+      "block_size_mb": 128,
+      "replication_factor": 3,
+      "required_components": [
+        "HDFS",
+        "YARN",
+        "MapReduce"
+      ],
+      "expected_stages": [
+        "HDFS_split",
+        "block_distribution",
+        "replication",
+        "map",
+        "shuffle_sort",
+        "reduce",
+        "output_write"
+      ]
+    }
+  },
+  {
+    "id": "nlu_0062",
+    "student_input": "Run a Hadoop job on 10 GB IoT telemetry to count word frequency, with replication factor 3.",
+    "interpretation": {
+      "workload_type": "word_count",
+      "input_data_type": "IoT telemetry",
+      "input_size_gb": 10,
+      "framework": "MapReduce",
+      "operation": "word_count",
+      "block_size_mb": 128,
+      "replication_factor": 3,
+      "required_components": [
+        "HDFS",
+        "YARN",
+        "MapReduce"
+      ],
+      "expected_stages": [
+        "HDFS_split",
+        "block_distribution",
+        "replication",
+        "map",
+        "shuffle_sort",
+        "reduce",
+        "output_write"
+      ]
+    }
+  },
+  {
+    "id": "nlu_0063",
+    "student_input": "Use HDFS and MapReduce to filter records and aggregate by category on a 10 GB web server logs file.",
+    "interpretation": {
+      "workload_type": "filter_aggregate",
+      "input_data_type": "web server logs",
+      "input_size_gb": 10,
+      "framework": "MapReduce",
+      "operation": "filter_aggregate",
+      "block_size_mb": 128,
+      "replication_factor": 3,
+      "required_components": [
+        "HDFS",
+        "YARN",
+        "MapReduce"
+      ],
+      "expected_stages": [
+        "HDFS_split",
+        "block_distribution",
+        "replication",
+        "map",
+        "shuffle_sort",
+        "reduce",
+        "output_write"
+      ]
+    }
+  },
+  {
+    "id": "nlu_0064",
+    "student_input": "What happens if I filter records and aggregate by category on 20 GB of application error logs using MapReduce?",
+    "interpretation": {
+      "workload_type": "filter_aggregate",
+      "input_data_type": "application error logs",
+      "input_size_gb": 20,
+      "framework": "MapReduce",
+      "operation": "filter_aggregate",
+      "block_size_mb": 128,
+      "replication_factor": 3,
+      "required_components": [
+        "HDFS",
+        "YARN",
+        "MapReduce"
+      ],
+      "expected_stages": [
+        "HDFS_split",
+        "block_distribution",
+        "replication",
+        "map",
+        "shuffle_sort",
+        "reduce",
+        "output_write"
+      ]
+    }
+  },
+  {
+    "id": "nlu_0065",
+    "student_input": "I have 20 GB of CSV sales records. Can you count ERROR records per application using Hadoop?",
+    "interpretation": {
+      "workload_type": "error_count",
+      "input_data_type": "CSV sales records",
+      "input_size_gb": 20,
+      "framework": "MapReduce",
+      "operation": "error_count",
+      "block_size_mb": 128,
+      "replication_factor": 3,
+      "required_components": [
+        "HDFS",
+        "MapReduce"
+      ],
+      "expected_stages": [
+        "HDFS_split",
+        "block_distribution",
+        "replication",
+        "map",
+        "shuffle_sort",
+        "reduce",
+        "output_write"
+      ]
+    }
+  },
+  {
+    "id": "nlu_0066",
+    "student_input": "I have 100 GB of social media posts. Can you compute the average of a numeric field per group using Hadoop?",
+    "interpretation": {
+      "workload_type": "average_metric",
+      "input_data_type": "social media posts",
+      "input_size_gb": 100,
+      "framework": "MapReduce",
+      "operation": "average_metric",
+      "block_size_mb": 128,
+      "replication_factor": 3,
+      "required_components": [
+        "HDFS",
+        "YARN",
+        "MapReduce"
+      ],
+      "expected_stages": [
+        "HDFS_split",
+        "block_distribution",
+        "replication",
+        "map",
+        "shuffle_sort",
+        "reduce",
+        "output_write"
+      ]
+    }
+  },
+  {
+    "id": "nlu_0067",
+    "student_input": "I have 5 GB of social media posts. Can you count word frequency using Hadoop?",
+    "interpretation": {
+      "workload_type": "word_count",
+      "input_data_type": "social media posts",
+      "input_size_gb": 5,
+      "framework": "MapReduce",
+      "operation": "word_count",
+      "block_size_mb": 128,
+      "replication_factor": 3,
+      "required_components": [
+        "HDFS",
+        "MapReduce"
+      ],
+      "expected_stages": [
+        "HDFS_split",
+        "block_distribution",
+        "replication",
+        "map",
+        "shuffle_sort",
+        "reduce",
+        "output_write"
+      ]
+    }
+  },
+  {
+    "id": "nlu_0068",
+    "student_input": "Process a 500 GB clickstream data dataset using Hadoop MapReduce and filter records and aggregate by category.",
+    "interpretation": {
+      "workload_type": "filter_aggregate",
+      "input_data_type": "clickstream data",
+      "input_size_gb": 500,
+      "framework": "MapReduce",
+      "operation": "filter_aggregate",
+      "block_size_mb": 128,
+      "replication_factor": 3,
+      "required_components": [
+        "HDFS",
+        "YARN",
+        "MapReduce"
+      ],
+      "expected_stages": [
+        "HDFS_split",
+        "block_distribution",
+        "replication",
+        "map",
+        "shuffle_sort",
+        "reduce",
+        "output_write"
+      ]
+    }
+  },
+  {
+    "id": "nlu_0069",
+    "student_input": "Use HDFS and MapReduce to filter records and aggregate by category on a 20 GB social media posts file.",
+    "interpretation": {
+      "workload_type": "filter_aggregate",
+      "input_data_type": "social media posts",
+      "input_size_gb": 20,
+      "framework": "MapReduce",
+      "operation": "filter_aggregate",
+      "block_size_mb": 128,
+      "replication_factor": 3,
+      "required_components": [
+        "HDFS",
+        "YARN",
+        "MapReduce"
+      ],
+      "expected_stages": [
+        "HDFS_split",
+        "block_distribution",
+        "replication",
+        "map",
+        "shuffle_sort",
+        "reduce",
+        "output_write"
+      ]
+    }
+  },
+  {
+    "id": "nlu_0070",
+    "student_input": "Process a 750 GB social media posts dataset using Hadoop MapReduce and compute the average of a numeric field per group.",
+    "interpretation": {
+      "workload_type": "average_metric",
+      "input_data_type": "social media posts",
+      "input_size_gb": 750,
+      "framework": "MapReduce",
+      "operation": "average_metric",
+      "block_size_mb": 128,
+      "replication_factor": 3,
+      "required_components": [
+        "HDFS",
+        "YARN",
+        "MapReduce"
+      ],
+      "expected_stages": [
+        "HDFS_split",
+        "block_distribution",
+        "replication",
+        "map",
+        "shuffle_sort",
+        "reduce",
+        "output_write"
+      ]
+    }
+  },
+  {
+    "id": "nlu_0071",
+    "student_input": "Process a 50 GB CSV sales records dataset using Hadoop MapReduce and join two datasets and summarize.",
+    "interpretation": {
+      "workload_type": "join_summary",
+      "input_data_type": "CSV sales records",
+      "input_size_gb": 50,
+      "framework": "MapReduce",
+      "operation": "join_summary",
+      "block_size_mb": 128,
+      "replication_factor": 3,
+      "required_components": [
+        "HDFS",
+        "YARN",
+        "MapReduce"
+      ],
+      "expected_stages": [
+        "HDFS_split",
+        "block_distribution",
+        "replication",
+        "map",
+        "shuffle_sort",
+        "reduce",
+        "output_write"
+      ]
+    }
+  },
+  {
+    "id": "nlu_0072",
+    "student_input": "Run a Hadoop job on 1000 GB social media posts to filter records and aggregate by category, with replication factor 3.",
+    "interpretation": {
+      "workload_type": "filter_aggregate",
+      "input_data_type": "social media posts",
+      "input_size_gb": 1000,
+      "framework": "MapReduce",
+      "operation": "filter_aggregate",
+      "block_size_mb": 128,
+      "replication_factor": 3,
+      "required_components": [
+        "HDFS",
+        "YARN",
+        "MapReduce"
+      ],
+      "expected_stages": [
+        "HDFS_split",
+        "block_distribution",
+        "replication",
+        "map",
+        "shuffle_sort",
+        "reduce",
+        "output_write"
+      ]
+    }
+  },
+  {
+    "id": "nlu_0073",
+    "student_input": "Process a 750 GB application error logs dataset using Hadoop MapReduce and find the top N most frequent items.",
+    "interpretation": {
+      "workload_type": "top_n",
+      "input_data_type": "application error logs",
+      "input_size_gb": 750,
+      "framework": "MapReduce",
+      "operation": "top_n",
+      "block_size_mb": 128,
+      "replication_factor": 3,
+      "required_components": [
+        "HDFS",
+        "YARN",
+        "MapReduce"
+      ],
+      "expected_stages": [
+        "HDFS_split",
+        "block_distribution",
+        "replication",
+        "map",
+        "shuffle_sort",
+        "reduce",
+        "output_write"
+      ]
+    }
+  },
+  {
+    "id": "nlu_0074",
+    "student_input": "Load 200 GB of web server logs into HDFS with block size 128 MB and join two datasets and summarize.",
+    "interpretation": {
+      "workload_type": "join_summary",
+      "input_data_type": "web server logs",
+      "input_size_gb": 200,
+      "framework": "MapReduce",
+      "operation": "join_summary",
+      "block_size_mb": 128,
+      "replication_factor": 3,
+      "required_components": [
+        "HDFS",
+        "YARN",
+        "MapReduce"
+      ],
+      "expected_stages": [
+        "HDFS_split",
+        "block_distribution",
+        "replication",
+        "map",
+        "shuffle_sort",
+        "reduce",
+        "output_write"
+      ]
+    }
+  },
+  {
+    "id": "nlu_0075",
+    "student_input": "Process a 5 GB clickstream data dataset using Hadoop MapReduce and join two datasets and summarize.",
+    "interpretation": {
+      "workload_type": "join_summary",
+      "input_data_type": "clickstream data",
+      "input_size_gb": 5,
+      "framework": "MapReduce",
+      "operation": "join_summary",
+      "block_size_mb": 128,
+      "replication_factor": 3,
+      "required_components": [
+        "HDFS",
+        "MapReduce"
+      ],
+      "expected_stages": [
+        "HDFS_split",
+        "block_distribution",
+        "replication",
+        "map",
+        "shuffle_sort",
+        "reduce",
+        "output_write"
+      ]
+    }
+  },
+  {
+    "id": "nlu_0076",
+    "student_input": "Load 50 GB of IoT telemetry into HDFS with block size 128 MB and filter records and aggregate by category.",
+    "interpretation": {
+      "workload_type": "filter_aggregate",
+      "input_data_type": "IoT telemetry",
+      "input_size_gb": 50,
+      "framework": "MapReduce",
+      "operation": "filter_aggregate",
+      "block_size_mb": 128,
+      "replication_factor": 3,
+      "required_components": [
+        "HDFS",
+        "YARN",
+        "MapReduce"
+      ],
+      "expected_stages": [
+        "HDFS_split",
+        "block_distribution",
+        "replication",
+        "map",
+        "shuffle_sort",
+        "reduce",
+        "output_write"
+      ]
+    }
+  },
+  {
+    "id": "nlu_0077",
+    "student_input": "What happens if I count ERROR records per application on 50 GB of IoT telemetry using MapReduce?",
+    "interpretation": {
+      "workload_type": "error_count",
+      "input_data_type": "IoT telemetry",
+      "input_size_gb": 50,
+      "framework": "MapReduce",
+      "operation": "error_count",
+      "block_size_mb": 128,
+      "replication_factor": 3,
+      "required_components": [
+        "HDFS",
+        "YARN",
+        "MapReduce"
+      ],
+      "expected_stages": [
+        "HDFS_split",
+        "block_distribution",
+        "replication",
+        "map",
+        "shuffle_sort",
+        "reduce",
+        "output_write"
+      ]
+    }
+  },
+  {
+    "id": "nlu_0078",
+    "student_input": "Run a Hadoop job on 200 GB CSV sales records to join two datasets and summarize, with replication factor 3.",
+    "interpretation": {
+      "workload_type": "join_summary",
+      "input_data_type": "CSV sales records",
+      "input_size_gb": 200,
+      "framework": "MapReduce",
+      "operation": "join_summary",
+      "block_size_mb": 128,
+      "replication_factor": 3,
+      "required_components": [
+        "HDFS",
+        "YARN",
+        "MapReduce"
+      ],
+      "expected_stages": [
+        "HDFS_split",
+        "block_distribution",
+        "replication",
+        "map",
+        "shuffle_sort",
+        "reduce",
+        "output_write"
+      ]
+    }
+  },
+  {
+    "id": "nlu_0079",
+    "student_input": "Run a Hadoop job on 1 GB sensor readings to filter records and aggregate by category, with replication factor 2.",
+    "interpretation": {
+      "workload_type": "filter_aggregate",
+      "input_data_type": "sensor readings",
+      "input_size_gb": 1,
+      "framework": "MapReduce",
+      "operation": "filter_aggregate",
+      "block_size_mb": 128,
+      "replication_factor": 2,
+      "required_components": [
+        "HDFS",
+        "MapReduce"
+      ],
+      "expected_stages": [
+        "HDFS_split",
+        "block_distribution",
+        "replication",
+        "map",
+        "shuffle_sort",
+        "reduce",
+        "output_write"
+      ]
+    }
+  },
+  {
+    "id": "nlu_0080",
+    "student_input": "I have 100 GB of financial transactions. Can you find the top N most frequent items using Hadoop?",
+    "interpretation": {
+      "workload_type": "top_n",
+      "input_data_type": "financial transactions",
+      "input_size_gb": 100,
+      "framework": "MapReduce",
+      "operation": "top_n",
+      "block_size_mb": 128,
+      "replication_factor": 3,
+      "required_components": [
+        "HDFS",
+        "YARN",
+        "MapReduce"
+      ],
+      "expected_stages": [
+        "HDFS_split",
+        "block_distribution",
+        "replication",
+        "map",
+        "shuffle_sort",
+        "reduce",
+        "output_write"
+      ]
+    }
+  },
+  {
+    "id": "nlu_0081",
+    "student_input": "Process a 750 GB financial transactions dataset using Hadoop MapReduce and compute the average of a numeric field per group.",
+    "interpretation": {
+      "workload_type": "average_metric",
+      "input_data_type": "financial transactions",
+      "input_size_gb": 750,
+      "framework": "MapReduce",
+      "operation": "average_metric",
+      "block_size_mb": 128,
+      "replication_factor": 3,
+      "required_components": [
+        "HDFS",
+        "YARN",
+        "MapReduce"
+      ],
+      "expected_stages": [
+        "HDFS_split",
+        "block_distribution",
+        "replication",
+        "map",
+        "shuffle_sort",
+        "reduce",
+        "output_write"
+      ]
+    }
+  },
+  {
+    "id": "nlu_0082",
+    "student_input": "I have 50 GB of IoT telemetry. Can you compute the average of a numeric field per group using Hadoop?",
+    "interpretation": {
+      "workload_type": "average_metric",
+      "input_data_type": "IoT telemetry",
+      "input_size_gb": 50,
+      "framework": "MapReduce",
+      "operation": "average_metric",
+      "block_size_mb": 128,
+      "replication_factor": 3,
+      "required_components": [
+        "HDFS",
+        "YARN",
+        "MapReduce"
+      ],
+      "expected_stages": [
+        "HDFS_split",
+        "block_distribution",
+        "replication",
+        "map",
+        "shuffle_sort",
+        "reduce",
+        "output_write"
+      ]
+    }
+  },
+  {
+    "id": "nlu_0083",
+    "student_input": "Process a 50 GB text corpus dataset using Hadoop MapReduce and count ERROR records per application.",
+    "interpretation": {
+      "workload_type": "error_count",
+      "input_data_type": "text corpus",
+      "input_size_gb": 50,
+      "framework": "MapReduce",
+      "operation": "error_count",
+      "block_size_mb": 128,
+      "replication_factor": 3,
+      "required_components": [
+        "HDFS",
+        "YARN",
+        "MapReduce"
+      ],
+      "expected_stages": [
+        "HDFS_split",
+        "block_distribution",
+        "replication",
+        "map",
+        "shuffle_sort",
+        "reduce",
+        "output_write"
+      ]
+    }
+  },
+  {
+    "id": "nlu_0084",
+    "student_input": "Load 20 GB of financial transactions into HDFS with block size 128 MB and join two datasets and summarize.",
+    "interpretation": {
+      "workload_type": "join_summary",
+      "input_data_type": "financial transactions",
+      "input_size_gb": 20,
+      "framework": "MapReduce",
+      "operation": "join_summary",
+      "block_size_mb": 128,
+      "replication_factor": 3,
+      "required_components": [
+        "HDFS",
+        "MapReduce"
+      ],
+      "expected_stages": [
+        "HDFS_split",
+        "block_distribution",
+        "replication",
+        "map",
+        "shuffle_sort",
+        "reduce",
+        "output_write"
+      ]
+    }
+  },
+  {
+    "id": "nlu_0085",
+    "student_input": "Load 1000 GB of text corpus into HDFS with block size 128 MB and compute the average of a numeric field per group.",
+    "interpretation": {
+      "workload_type": "average_metric",
+      "input_data_type": "text corpus",
+      "input_size_gb": 1000,
+      "framework": "MapReduce",
+      "operation": "average_metric",
+      "block_size_mb": 128,
+      "replication_factor": 3,
+      "required_components": [
+        "HDFS",
+        "YARN",
+        "MapReduce"
+      ],
+      "expected_stages": [
+        "HDFS_split",
+        "block_distribution",
+        "replication",
+        "map",
+        "shuffle_sort",
+        "reduce",
+        "output_write"
+      ]
+    }
+  },
+  {
+    "id": "nlu_0086",
+    "student_input": "Load 20 GB of CSV sales records into HDFS with block size 64 MB and compute the average of a numeric field per group.",
+    "interpretation": {
+      "workload_type": "average_metric",
+      "input_data_type": "CSV sales records",
+      "input_size_gb": 20,
+      "framework": "MapReduce",
+      "operation": "average_metric",
+      "block_size_mb": 64,
+      "replication_factor": 3,
+      "required_components": [
+        "HDFS",
+        "YARN",
+        "MapReduce"
+      ],
+      "expected_stages": [
+        "HDFS_split",
+        "block_distribution",
+        "replication",
+        "map",
+        "shuffle_sort",
+        "reduce",
+        "output_write"
+      ]
+    }
+  },
+  {
+    "id": "nlu_0087",
+    "student_input": "Load 750 GB of financial transactions into HDFS with block size 64 MB and count word frequency.",
+    "interpretation": {
+      "workload_type": "word_count",
+      "input_data_type": "financial transactions",
+      "input_size_gb": 750,
+      "framework": "MapReduce",
+      "operation": "word_count",
+      "block_size_mb": 64,
+      "replication_factor": 3,
+      "required_components": [
+        "HDFS",
+        "YARN",
+        "MapReduce"
+      ],
+      "expected_stages": [
+        "HDFS_split",
+        "block_distribution",
+        "replication",
+        "map",
+        "shuffle_sort",
+        "reduce",
+        "output_write"
+      ]
+    }
+  },
+  {
+    "id": "nlu_0088",
+    "student_input": "Run a Hadoop job on 10 GB financial transactions to compute the average of a numeric field per group, with replication factor 3.",
+    "interpretation": {
+      "workload_type": "average_metric",
+      "input_data_type": "financial transactions",
+      "input_size_gb": 10,
+      "framework": "MapReduce",
+      "operation": "average_metric",
+      "block_size_mb": 128,
+      "replication_factor": 3,
+      "required_components": [
+        "HDFS",
+        "MapReduce"
+      ],
+      "expected_stages": [
+        "HDFS_split",
+        "block_distribution",
+        "replication",
+        "map",
+        "shuffle_sort",
+        "reduce",
+        "output_write"
+      ]
+    }
+  },
+  {
+    "id": "nlu_0089",
+    "student_input": "What happens if I join two datasets and summarize on 750 GB of social media posts using MapReduce?",
+    "interpretation": {
+      "workload_type": "join_summary",
+      "input_data_type": "social media posts",
+      "input_size_gb": 750,
+      "framework": "MapReduce",
+      "operation": "join_summary",
+      "block_size_mb": 128,
+      "replication_factor": 3,
+      "required_components": [
+        "HDFS",
+        "YARN",
+        "MapReduce"
+      ],
+      "expected_stages": [
+        "HDFS_split",
+        "block_distribution",
+        "replication",
+        "map",
+        "shuffle_sort",
+        "reduce",
+        "output_write"
+      ]
+    }
+  },
+  {
+    "id": "nlu_0090",
+    "student_input": "Use HDFS and MapReduce to filter records and aggregate by category on a 500 GB financial transactions file.",
+    "interpretation": {
+      "workload_type": "filter_aggregate",
+      "input_data_type": "financial transactions",
+      "input_size_gb": 500,
+      "framework": "MapReduce",
+      "operation": "filter_aggregate",
+      "block_size_mb": 128,
+      "replication_factor": 3,
+      "required_components": [
+        "HDFS",
+        "YARN",
+        "MapReduce"
+      ],
+      "expected_stages": [
+        "HDFS_split",
+        "block_distribution",
+        "replication",
+        "map",
+        "shuffle_sort",
+        "reduce",
+        "output_write"
+      ]
+    }
+  },
+  {
+    "id": "nlu_0091",
+    "student_input": "Load 750 GB of financial transactions into HDFS with block size 128 MB and compute the average of a numeric field per group.",
+    "interpretation": {
+      "workload_type": "average_metric",
+      "input_data_type": "financial transactions",
+      "input_size_gb": 750,
+      "framework": "MapReduce",
+      "operation": "average_metric",
+      "block_size_mb": 128,
+      "replication_factor": 3,
+      "required_components": [
+        "HDFS",
+        "YARN",
+        "MapReduce"
+      ],
+      "expected_stages": [
+        "HDFS_split",
+        "block_distribution",
+        "replication",
+        "map",
+        "shuffle_sort",
+        "reduce",
+        "output_write"
+      ]
+    }
+  },
+  {
+    "id": "nlu_0092",
+    "student_input": "Use HDFS and MapReduce to count ERROR records per application on a 5 GB sensor readings file.",
+    "interpretation": {
+      "workload_type": "error_count",
+      "input_data_type": "sensor readings",
+      "input_size_gb": 5,
+      "framework": "MapReduce",
+      "operation": "error_count",
+      "block_size_mb": 128,
+      "replication_factor": 3,
+      "required_components": [
+        "HDFS",
+        "MapReduce"
+      ],
+      "expected_stages": [
+        "HDFS_split",
+        "block_distribution",
+        "replication",
+        "map",
+        "shuffle_sort",
+        "reduce",
+        "output_write"
+      ]
+    }
+  },
+  {
+    "id": "nlu_0093",
+    "student_input": "What happens if I count ERROR records per application on 5 GB of CSV sales records using MapReduce?",
+    "interpretation": {
+      "workload_type": "error_count",
+      "input_data_type": "CSV sales records",
+      "input_size_gb": 5,
+      "framework": "MapReduce",
+      "operation": "error_count",
+      "block_size_mb": 128,
+      "replication_factor": 3,
+      "required_components": [
+        "HDFS",
+        "YARN",
+        "MapReduce"
+      ],
+      "expected_stages": [
+        "HDFS_split",
+        "block_distribution",
+        "replication",
+        "map",
+        "shuffle_sort",
+        "reduce",
+        "output_write"
+      ]
+    }
+  },
+  {
+    "id": "nlu_0094",
+    "student_input": "Run a Hadoop job on 20 GB application error logs to find the top N most frequent items, with replication factor 3.",
+    "interpretation": {
+      "workload_type": "top_n",
+      "input_data_type": "application error logs",
+      "input_size_gb": 20,
+      "framework": "MapReduce",
+      "operation": "top_n",
+      "block_size_mb": 128,
+      "replication_factor": 3,
+      "required_components": [
+        "HDFS",
+        "YARN",
+        "MapReduce"
+      ],
+      "expected_stages": [
+        "HDFS_split",
+        "block_distribution",
+        "replication",
+        "map",
+        "shuffle_sort",
+        "reduce",
+        "output_write"
+      ]
+    }
+  },
+  {
+    "id": "nlu_0095",
+    "student_input": "What happens if I find the top N most frequent items on 1 GB of text corpus using MapReduce?",
+    "interpretation": {
+      "workload_type": "top_n",
+      "input_data_type": "text corpus",
+      "input_size_gb": 1,
+      "framework": "MapReduce",
+      "operation": "top_n",
+      "block_size_mb": 128,
+      "replication_factor": 3,
+      "required_components": [
+        "HDFS",
+        "YARN",
+        "MapReduce"
+      ],
+      "expected_stages": [
+        "HDFS_split",
+        "block_distribution",
+        "replication",
+        "map",
+        "shuffle_sort",
+        "reduce",
+        "output_write"
+      ]
+    }
+  },
+  {
+    "id": "nlu_0096",
+    "student_input": "Use HDFS and MapReduce to find the top N most frequent items on a 1000 GB social media posts file.",
+    "interpretation": {
+      "workload_type": "top_n",
+      "input_data_type": "social media posts",
+      "input_size_gb": 1000,
+      "framework": "MapReduce",
+      "operation": "top_n",
+      "block_size_mb": 128,
+      "replication_factor": 3,
+      "required_components": [
+        "HDFS",
+        "YARN",
+        "MapReduce"
+      ],
+      "expected_stages": [
+        "HDFS_split",
+        "block_distribution",
+        "replication",
+        "map",
+        "shuffle_sort",
+        "reduce",
+        "output_write"
+      ]
+    }
+  },
+  {
+    "id": "nlu_0097",
+    "student_input": "I have 200 GB of social media posts. Can you join two datasets and summarize using Hadoop?",
+    "interpretation": {
+      "workload_type": "join_summary",
+      "input_data_type": "social media posts",
+      "input_size_gb": 200,
+      "framework": "MapReduce",
+      "operation": "join_summary",
+      "block_size_mb": 128,
+      "replication_factor": 3,
+      "required_components": [
+        "HDFS",
+        "YARN",
+        "MapReduce"
+      ],
+      "expected_stages": [
+        "HDFS_split",
+        "block_distribution",
+        "replication",
+        "map",
+        "shuffle_sort",
+        "reduce",
+        "output_write"
+      ]
+    }
+  },
+  {
+    "id": "nlu_0098",
+    "student_input": "Use HDFS and MapReduce to find the top N most frequent items on a 50 GB social media posts file.",
+    "interpretation": {
+      "workload_type": "top_n",
+      "input_data_type": "social media posts",
+      "input_size_gb": 50,
+      "framework": "MapReduce",
+      "operation": "top_n",
+      "block_size_mb": 128,
+      "replication_factor": 3,
+      "required_components": [
+        "HDFS",
+        "YARN",
+        "MapReduce"
+      ],
+      "expected_stages": [
+        "HDFS_split",
+        "block_distribution",
+        "replication",
+        "map",
+        "shuffle_sort",
+        "reduce",
+        "output_write"
+      ]
+    }
+  },
+  {
+    "id": "nlu_0099",
+    "student_input": "Run a Hadoop job on 200 GB CSV sales records to find the top N most frequent items, with replication factor 2.",
+    "interpretation": {
+      "workload_type": "top_n",
+      "input_data_type": "CSV sales records",
+      "input_size_gb": 200,
+      "framework": "MapReduce",
+      "operation": "top_n",
+      "block_size_mb": 128,
+      "replication_factor": 2,
+      "required_components": [
+        "HDFS",
+        "YARN",
+        "MapReduce"
+      ],
+      "expected_stages": [
+        "HDFS_split",
+        "block_distribution",
+        "replication",
+        "map",
+        "shuffle_sort",
+        "reduce",
+        "output_write"
+      ]
+    }
+  },
+  {
+    "id": "nlu_0100",
+    "student_input": "What happens if I join two datasets and summarize on 1 GB of social media posts using MapReduce?",
+    "interpretation": {
+      "workload_type": "join_summary",
+      "input_data_type": "social media posts",
+      "input_size_gb": 1,
+      "framework": "MapReduce",
+      "operation": "join_summary",
+      "block_size_mb": 128,
+      "replication_factor": 3,
+      "required_components": [
+        "HDFS",
+        "YARN",
+        "MapReduce"
+      ],
+      "expected_stages": [
+        "HDFS_split",
+        "block_distribution",
+        "replication",
+        "map",
+        "shuffle_sort",
+        "reduce",
+        "output_write"
+      ]
+    }
+  },
+  {
+    "id": "nlu_0101",
+    "student_input": "Use HDFS and MapReduce to count word frequency on a 500 GB CSV sales records file.",
+    "interpretation": {
+      "workload_type": "word_count",
+      "input_data_type": "CSV sales records",
+      "input_size_gb": 500,
+      "framework": "MapReduce",
+      "operation": "word_count",
+      "block_size_mb": 128,
+      "replication_factor": 3,
+      "required_components": [
+        "HDFS",
+        "YARN",
+        "MapReduce"
+      ],
+      "expected_stages": [
+        "HDFS_split",
+        "block_distribution",
+        "replication",
+        "map",
+        "shuffle_sort",
+        "reduce",
+        "output_write"
+      ]
+    }
+  },
+  {
+    "id": "nlu_0102",
+    "student_input": "Use HDFS and MapReduce to filter records and aggregate by category on a 20 GB financial transactions file.",
+    "interpretation": {
+      "workload_type": "filter_aggregate",
+      "input_data_type": "financial transactions",
+      "input_size_gb": 20,
+      "framework": "MapReduce",
+      "operation": "filter_aggregate",
+      "block_size_mb": 128,
+      "replication_factor": 3,
+      "required_components": [
+        "HDFS",
+        "MapReduce"
+      ],
+      "expected_stages": [
+        "HDFS_split",
+        "block_distribution",
+        "replication",
+        "map",
+        "shuffle_sort",
+        "reduce",
+        "output_write"
+      ]
+    }
+  },
+  {
+    "id": "nlu_0103",
+    "student_input": "What happens if I count word frequency on 200 GB of sensor readings using MapReduce?",
+    "interpretation": {
+      "workload_type": "word_count",
+      "input_data_type": "sensor readings",
+      "input_size_gb": 200,
+      "framework": "MapReduce",
+      "operation": "word_count",
+      "block_size_mb": 128,
+      "replication_factor": 3,
+      "required_components": [
+        "HDFS",
+        "YARN",
+        "MapReduce"
+      ],
+      "expected_stages": [
+        "HDFS_split",
+        "block_distribution",
+        "replication",
+        "map",
+        "shuffle_sort",
+        "reduce",
+        "output_write"
+      ]
+    }
+  },
+  {
+    "id": "nlu_0104",
+    "student_input": "Process a 750 GB web server logs dataset using Hadoop MapReduce and filter records and aggregate by category.",
+    "interpretation": {
+      "workload_type": "filter_aggregate",
+      "input_data_type": "web server logs",
+      "input_size_gb": 750,
+      "framework": "MapReduce",
+      "operation": "filter_aggregate",
+      "block_size_mb": 128,
+      "replication_factor": 3,
+      "required_components": [
+        "HDFS",
+        "YARN",
+        "MapReduce"
+      ],
+      "expected_stages": [
+        "HDFS_split",
+        "block_distribution",
+        "replication",
+        "map",
+        "shuffle_sort",
+        "reduce",
+        "output_write"
+      ]
+    }
+  },
+  {
+    "id": "nlu_0105",
+    "student_input": "Run a Hadoop job on 1 GB web server logs to count ERROR records per application, with replication factor 2.",
+    "interpretation": {
+      "workload_type": "error_count",
+      "input_data_type": "web server logs",
+      "input_size_gb": 1,
+      "framework": "MapReduce",
+      "operation": "error_count",
+      "block_size_mb": 128,
+      "replication_factor": 2,
+      "required_components": [
+        "HDFS",
+        "YARN",
+        "MapReduce"
+      ],
+      "expected_stages": [
+        "HDFS_split",
+        "block_distribution",
+        "replication",
+        "map",
+        "shuffle_sort",
+        "reduce",
+        "output_write"
+      ]
+    }
+  },
+  {
+    "id": "nlu_0106",
+    "student_input": "I have 10 GB of financial transactions. Can you compute the average of a numeric field per group using Hadoop?",
+    "interpretation": {
+      "workload_type": "average_metric",
+      "input_data_type": "financial transactions",
+      "input_size_gb": 10,
+      "framework": "MapReduce",
+      "operation": "average_metric",
+      "block_size_mb": 128,
+      "replication_factor": 3,
+      "required_components": [
+        "HDFS",
+        "YARN",
+        "MapReduce"
+      ],
+      "expected_stages": [
+        "HDFS_split",
+        "block_distribution",
+        "replication",
+        "map",
+        "shuffle_sort",
+        "reduce",
+        "output_write"
+      ]
+    }
+  },
+  {
+    "id": "nlu_0107",
+    "student_input": "Use HDFS and MapReduce to count ERROR records per application on a 50 GB clickstream data file.",
+    "interpretation": {
+      "workload_type": "error_count",
+      "input_data_type": "clickstream data",
+      "input_size_gb": 50,
+      "framework": "MapReduce",
+      "operation": "error_count",
+      "block_size_mb": 128,
+      "replication_factor": 3,
+      "required_components": [
+        "HDFS",
+        "YARN",
+        "MapReduce"
+      ],
+      "expected_stages": [
+        "HDFS_split",
+        "block_distribution",
+        "replication",
+        "map",
+        "shuffle_sort",
+        "reduce",
+        "output_write"
+      ]
+    }
+  },
+  {
+    "id": "nlu_0108",
+    "student_input": "What happens if I count word frequency on 5 GB of e-commerce order logs using MapReduce?",
+    "interpretation": {
+      "workload_type": "word_count",
+      "input_data_type": "e-commerce order logs",
+      "input_size_gb": 5,
+      "framework": "MapReduce",
+      "operation": "word_count",
+      "block_size_mb": 128,
+      "replication_factor": 3,
+      "required_components": [
+        "HDFS",
+        "MapReduce"
+      ],
+      "expected_stages": [
+        "HDFS_split",
+        "block_distribution",
+        "replication",
+        "map",
+        "shuffle_sort",
+        "reduce",
+        "output_write"
+      ]
+    }
+  },
+  {
+    "id": "nlu_0109",
+    "student_input": "Run a Hadoop job on 200 GB social media posts to compute the average of a numeric field per group, with replication factor 2.",
+    "interpretation": {
+      "workload_type": "average_metric",
+      "input_data_type": "social media posts",
+      "input_size_gb": 200,
+      "framework": "MapReduce",
+      "operation": "average_metric",
+      "block_size_mb": 128,
+      "replication_factor": 2,
+      "required_components": [
+        "HDFS",
+        "YARN",
+        "MapReduce"
+      ],
+      "expected_stages": [
+        "HDFS_split",
+        "block_distribution",
+        "replication",
+        "map",
+        "shuffle_sort",
+        "reduce",
+        "output_write"
+      ]
+    }
+  },
+  {
+    "id": "nlu_0110",
+    "student_input": "Run a Hadoop job on 20 GB application error logs to compute the average of a numeric field per group, with replication factor 3.",
+    "interpretation": {
+      "workload_type": "average_metric",
+      "input_data_type": "application error logs",
+      "input_size_gb": 20,
+      "framework": "MapReduce",
+      "operation": "average_metric",
+      "block_size_mb": 128,
+      "replication_factor": 3,
+      "required_components": [
+        "HDFS",
+        "MapReduce"
+      ],
+      "expected_stages": [
+        "HDFS_split",
+        "block_distribution",
+        "replication",
+        "map",
+        "shuffle_sort",
+        "reduce",
+        "output_write"
+      ]
+    }
+  },
+  {
+    "id": "nlu_0111",
+    "student_input": "Use HDFS and MapReduce to filter records and aggregate by category on a 1000 GB web server logs file.",
+    "interpretation": {
+      "workload_type": "filter_aggregate",
+      "input_data_type": "web server logs",
+      "input_size_gb": 1000,
+      "framework": "MapReduce",
+      "operation": "filter_aggregate",
+      "block_size_mb": 128,
+      "replication_factor": 3,
+      "required_components": [
+        "HDFS",
+        "YARN",
+        "MapReduce"
+      ],
+      "expected_stages": [
+        "HDFS_split",
+        "block_distribution",
+        "replication",
+        "map",
+        "shuffle_sort",
+        "reduce",
+        "output_write"
+      ]
+    }
+  },
+  {
+    "id": "nlu_0112",
+    "student_input": "Load 5 GB of IoT telemetry into HDFS with block size 64 MB and compute the average of a numeric field per group.",
+    "interpretation": {
+      "workload_type": "average_metric",
+      "input_data_type": "IoT telemetry",
+      "input_size_gb": 5,
+      "framework": "MapReduce",
+      "operation": "average_metric",
+      "block_size_mb": 64,
+      "replication_factor": 3,
+      "required_components": [
+        "HDFS",
+        "MapReduce"
+      ],
+      "expected_stages": [
+        "HDFS_split",
+        "block_distribution",
+        "replication",
+        "map",
+        "shuffle_sort",
+        "reduce",
+        "output_write"
+      ]
+    }
+  },
+  {
+    "id": "nlu_0113",
+    "student_input": "I have 5 GB of social media posts. Can you filter records and aggregate by category using Hadoop?",
+    "interpretation": {
+      "workload_type": "filter_aggregate",
+      "input_data_type": "social media posts",
+      "input_size_gb": 5,
+      "framework": "MapReduce",
+      "operation": "filter_aggregate",
+      "block_size_mb": 128,
+      "replication_factor": 3,
+      "required_components": [
+        "HDFS",
+        "YARN",
+        "MapReduce"
+      ],
+      "expected_stages": [
+        "HDFS_split",
+        "block_distribution",
+        "replication",
+        "map",
+        "shuffle_sort",
+        "reduce",
+        "output_write"
+      ]
+    }
+  },
+  {
+    "id": "nlu_0114",
+    "student_input": "Load 750 GB of sensor readings into HDFS with block size 128 MB and join two datasets and summarize.",
+    "interpretation": {
+      "workload_type": "join_summary",
+      "input_data_type": "sensor readings",
+      "input_size_gb": 750,
+      "framework": "MapReduce",
+      "operation": "join_summary",
+      "block_size_mb": 128,
+      "replication_factor": 3,
+      "required_components": [
+        "HDFS",
+        "YARN",
+        "MapReduce"
+      ],
+      "expected_stages": [
+        "HDFS_split",
+        "block_distribution",
+        "replication",
+        "map",
+        "shuffle_sort",
+        "reduce",
+        "output_write"
+      ]
+    }
+  },
+  {
+    "id": "nlu_0115",
+    "student_input": "Use HDFS and MapReduce to filter records and aggregate by category on a 1000 GB sensor readings file.",
+    "interpretation": {
+      "workload_type": "filter_aggregate",
+      "input_data_type": "sensor readings",
+      "input_size_gb": 1000,
+      "framework": "MapReduce",
+      "operation": "filter_aggregate",
+      "block_size_mb": 128,
+      "replication_factor": 3,
+      "required_components": [
+        "HDFS",
+        "YARN",
+        "MapReduce"
+      ],
+      "expected_stages": [
+        "HDFS_split",
+        "block_distribution",
+        "replication",
+        "map",
+        "shuffle_sort",
+        "reduce",
+        "output_write"
+      ]
+    }
+  },
+  {
+    "id": "nlu_0116",
+    "student_input": "Process a 500 GB text corpus dataset using Hadoop MapReduce and find the top N most frequent items.",
+    "interpretation": {
+      "workload_type": "top_n",
+      "input_data_type": "text corpus",
+      "input_size_gb": 500,
+      "framework": "MapReduce",
+      "operation": "top_n",
+      "block_size_mb": 128,
+      "replication_factor": 3,
+      "required_components": [
+        "HDFS",
+        "YARN",
+        "MapReduce"
+      ],
+      "expected_stages": [
+        "HDFS_split",
+        "block_distribution",
+        "replication",
+        "map",
+        "shuffle_sort",
+        "reduce",
+        "output_write"
+      ]
+    }
+  },
+  {
+    "id": "nlu_0117",
+    "student_input": "Use HDFS and MapReduce to count ERROR records per application on a 500 GB clickstream data file.",
+    "interpretation": {
+      "workload_type": "error_count",
+      "input_data_type": "clickstream data",
+      "input_size_gb": 500,
+      "framework": "MapReduce",
+      "operation": "error_count",
+      "block_size_mb": 128,
+      "replication_factor": 3,
+      "required_components": [
+        "HDFS",
+        "YARN",
+        "MapReduce"
+      ],
+      "expected_stages": [
+        "HDFS_split",
+        "block_distribution",
+        "replication",
+        "map",
+        "shuffle_sort",
+        "reduce",
+        "output_write"
+      ]
+    }
+  },
+  {
+    "id": "nlu_0118",
+    "student_input": "Process a 50 GB clickstream data dataset using Hadoop MapReduce and filter records and aggregate by category.",
+    "interpretation": {
+      "workload_type": "filter_aggregate",
+      "input_data_type": "clickstream data",
+      "input_size_gb": 50,
+      "framework": "MapReduce",
+      "operation": "filter_aggregate",
+      "block_size_mb": 128,
+      "replication_factor": 3,
+      "required_components": [
+        "HDFS",
+        "YARN",
+        "MapReduce"
+      ],
+      "expected_stages": [
+        "HDFS_split",
+        "block_distribution",
+        "replication",
+        "map",
+        "shuffle_sort",
+        "reduce",
+        "output_write"
+      ]
+    }
+  },
+  {
+    "id": "nlu_0119",
+    "student_input": "Load 750 GB of text corpus into HDFS with block size 256 MB and count word frequency.",
+    "interpretation": {
+      "workload_type": "word_count",
+      "input_data_type": "text corpus",
+      "input_size_gb": 750,
+      "framework": "MapReduce",
+      "operation": "word_count",
+      "block_size_mb": 256,
+      "replication_factor": 3,
+      "required_components": [
+        "HDFS",
+        "YARN",
+        "MapReduce"
+      ],
+      "expected_stages": [
+        "HDFS_split",
+        "block_distribution",
+        "replication",
+        "map",
+        "shuffle_sort",
+        "reduce",
+        "output_write"
+      ]
+    }
+  },
+  {
+    "id": "nlu_0120",
+    "student_input": "What happens if I count ERROR records per application on 500 GB of IoT telemetry using MapReduce?",
+    "interpretation": {
+      "workload_type": "error_count",
+      "input_data_type": "IoT telemetry",
+      "input_size_gb": 500,
+      "framework": "MapReduce",
+      "operation": "error_count",
+      "block_size_mb": 128,
+      "replication_factor": 3,
+      "required_components": [
+        "HDFS",
+        "YARN",
+        "MapReduce"
+      ],
+      "expected_stages": [
+        "HDFS_split",
+        "block_distribution",
+        "replication",
+        "map",
+        "shuffle_sort",
+        "reduce",
+        "output_write"
+      ]
+    }
+  },
+  {
+    "id": "nlu_0121",
+    "student_input": "I have 500 GB of financial transactions. Can you count word frequency using Hadoop?",
+    "interpretation": {
+      "workload_type": "word_count",
+      "input_data_type": "financial transactions",
+      "input_size_gb": 500,
+      "framework": "MapReduce",
+      "operation": "word_count",
+      "block_size_mb": 128,
+      "replication_factor": 3,
+      "required_components": [
+        "HDFS",
+        "YARN",
+        "MapReduce"
+      ],
+      "expected_stages": [
+        "HDFS_split",
+        "block_distribution",
+        "replication",
+        "map",
+        "shuffle_sort",
+        "reduce",
+        "output_write"
+      ]
+    }
+  },
+  {
+    "id": "nlu_0122",
+    "student_input": "Run a Hadoop job on 200 GB text corpus to filter records and aggregate by category, with replication factor 3.",
+    "interpretation": {
+      "workload_type": "filter_aggregate",
+      "input_data_type": "text corpus",
+      "input_size_gb": 200,
+      "framework": "MapReduce",
+      "operation": "filter_aggregate",
+      "block_size_mb": 128,
+      "replication_factor": 3,
+      "required_components": [
+        "HDFS",
+        "YARN",
+        "MapReduce"
+      ],
+      "expected_stages": [
+        "HDFS_split",
+        "block_distribution",
+        "replication",
+        "map",
+        "shuffle_sort",
+        "reduce",
+        "output_write"
+      ]
+    }
+  },
+  {
+    "id": "nlu_0123",
+    "student_input": "What happens if I find the top N most frequent items on 750 GB of clickstream data using MapReduce?",
+    "interpretation": {
+      "workload_type": "top_n",
+      "input_data_type": "clickstream data",
+      "input_size_gb": 750,
+      "framework": "MapReduce",
+      "operation": "top_n",
+      "block_size_mb": 128,
+      "replication_factor": 3,
+      "required_components": [
+        "HDFS",
+        "YARN",
+        "MapReduce"
+      ],
+      "expected_stages": [
+        "HDFS_split",
+        "block_distribution",
+        "replication",
+        "map",
+        "shuffle_sort",
+        "reduce",
+        "output_write"
+      ]
+    }
+  },
+  {
+    "id": "nlu_0124",
+    "student_input": "Process a 500 GB sensor readings dataset using Hadoop MapReduce and filter records and aggregate by category.",
+    "interpretation": {
+      "workload_type": "filter_aggregate",
+      "input_data_type": "sensor readings",
+      "input_size_gb": 500,
+      "framework": "MapReduce",
+      "operation": "filter_aggregate",
+      "block_size_mb": 128,
+      "replication_factor": 3,
+      "required_components": [
+        "HDFS",
+        "YARN",
+        "MapReduce"
+      ],
+      "expected_stages": [
+        "HDFS_split",
+        "block_distribution",
+        "replication",
+        "map",
+        "shuffle_sort",
+        "reduce",
+        "output_write"
+      ]
+    }
+  },
+  {
+    "id": "nlu_0125",
+    "student_input": "I have 20 GB of clickstream data. Can you count word frequency using Hadoop?",
+    "interpretation": {
+      "workload_type": "word_count",
+      "input_data_type": "clickstream data",
+      "input_size_gb": 20,
+      "framework": "MapReduce",
+      "operation": "word_count",
+      "block_size_mb": 128,
+      "replication_factor": 3,
+      "required_components": [
+        "HDFS",
+        "MapReduce"
+      ],
+      "expected_stages": [
+        "HDFS_split",
+        "block_distribution",
+        "replication",
+        "map",
+        "shuffle_sort",
+        "reduce",
+        "output_write"
+      ]
+    }
+  },
+  {
+    "id": "nlu_0126",
+    "student_input": "I have 50 GB of e-commerce order logs. Can you join two datasets and summarize using Hadoop?",
+    "interpretation": {
+      "workload_type": "join_summary",
+      "input_data_type": "e-commerce order logs",
+      "input_size_gb": 50,
+      "framework": "MapReduce",
+      "operation": "join_summary",
+      "block_size_mb": 128,
+      "replication_factor": 3,
+      "required_components": [
+        "HDFS",
+        "YARN",
+        "MapReduce"
+      ],
+      "expected_stages": [
+        "HDFS_split",
+        "block_distribution",
+        "replication",
+        "map",
+        "shuffle_sort",
+        "reduce",
+        "output_write"
+      ]
+    }
+  },
+  {
+    "id": "nlu_0127",
+    "student_input": "Process a 50 GB text corpus dataset using Hadoop MapReduce and filter records and aggregate by category.",
+    "interpretation": {
+      "workload_type": "filter_aggregate",
+      "input_data_type": "text corpus",
+      "input_size_gb": 50,
+      "framework": "MapReduce",
+      "operation": "filter_aggregate",
+      "block_size_mb": 128,
+      "replication_factor": 3,
+      "required_components": [
+        "HDFS",
+        "YARN",
+        "MapReduce"
+      ],
+      "expected_stages": [
+        "HDFS_split",
+        "block_distribution",
+        "replication",
+        "map",
+        "shuffle_sort",
+        "reduce",
+        "output_write"
+      ]
+    }
+  },
+  {
+    "id": "nlu_0128",
+    "student_input": "Run a Hadoop job on 750 GB CSV sales records to filter records and aggregate by category, with replication factor 2.",
+    "interpretation": {
+      "workload_type": "filter_aggregate",
+      "input_data_type": "CSV sales records",
+      "input_size_gb": 750,
+      "framework": "MapReduce",
+      "operation": "filter_aggregate",
+      "block_size_mb": 128,
+      "replication_factor": 2,
+      "required_components": [
+        "HDFS",
+        "YARN",
+        "MapReduce"
+      ],
+      "expected_stages": [
+        "HDFS_split",
+        "block_distribution",
+        "replication",
+        "map",
+        "shuffle_sort",
+        "reduce",
+        "output_write"
+      ]
+    }
+  },
+  {
+    "id": "nlu_0129",
+    "student_input": "Process a 50 GB CSV sales records dataset using Hadoop MapReduce and compute the average of a numeric field per group.",
+    "interpretation": {
+      "workload_type": "average_metric",
+      "input_data_type": "CSV sales records",
+      "input_size_gb": 50,
+      "framework": "MapReduce",
+      "operation": "average_metric",
+      "block_size_mb": 128,
+      "replication_factor": 3,
+      "required_components": [
+        "HDFS",
+        "YARN",
+        "MapReduce"
+      ],
+      "expected_stages": [
+        "HDFS_split",
+        "block_distribution",
+        "replication",
+        "map",
+        "shuffle_sort",
+        "reduce",
+        "output_write"
+      ]
+    }
+  },
+  {
+    "id": "nlu_0130",
+    "student_input": "Use HDFS and MapReduce to find the top N most frequent items on a 1000 GB sensor readings file.",
+    "interpretation": {
+      "workload_type": "top_n",
+      "input_data_type": "sensor readings",
+      "input_size_gb": 1000,
+      "framework": "MapReduce",
+      "operation": "top_n",
+      "block_size_mb": 128,
+      "replication_factor": 3,
+      "required_components": [
+        "HDFS",
+        "YARN",
+        "MapReduce"
+      ],
+      "expected_stages": [
+        "HDFS_split",
+        "block_distribution",
+        "replication",
+        "map",
+        "shuffle_sort",
+        "reduce",
+        "output_write"
+      ]
+    }
+  },
+  {
+    "id": "nlu_0131",
+    "student_input": "Process a 10 GB web server logs dataset using Hadoop MapReduce and filter records and aggregate by category.",
+    "interpretation": {
+      "workload_type": "filter_aggregate",
+      "input_data_type": "web server logs",
+      "input_size_gb": 10,
+      "framework": "MapReduce",
+      "operation": "filter_aggregate",
+      "block_size_mb": 128,
+      "replication_factor": 3,
+      "required_components": [
+        "HDFS",
+        "YARN",
+        "MapReduce"
+      ],
+      "expected_stages": [
+        "HDFS_split",
+        "block_distribution",
+        "replication",
+        "map",
+        "shuffle_sort",
+        "reduce",
+        "output_write"
+      ]
+    }
+  },
+  {
+    "id": "nlu_0132",
+    "student_input": "I have 5 GB of e-commerce order logs. Can you compute the average of a numeric field per group using Hadoop?",
+    "interpretation": {
+      "workload_type": "average_metric",
+      "input_data_type": "e-commerce order logs",
+      "input_size_gb": 5,
+      "framework": "MapReduce",
+      "operation": "average_metric",
+      "block_size_mb": 128,
+      "replication_factor": 3,
+      "required_components": [
+        "HDFS",
+        "MapReduce"
+      ],
+      "expected_stages": [
+        "HDFS_split",
+        "block_distribution",
+        "replication",
+        "map",
+        "shuffle_sort",
+        "reduce",
+        "output_write"
+      ]
+    }
+  },
+  {
+    "id": "nlu_0133",
+    "student_input": "Load 50 GB of application error logs into HDFS with block size 256 MB and count ERROR records per application.",
+    "interpretation": {
+      "workload_type": "error_count",
+      "input_data_type": "application error logs",
+      "input_size_gb": 50,
+      "framework": "MapReduce",
+      "operation": "error_count",
+      "block_size_mb": 256,
+      "replication_factor": 3,
+      "required_components": [
+        "HDFS",
+        "YARN",
+        "MapReduce"
+      ],
+      "expected_stages": [
+        "HDFS_split",
+        "block_distribution",
+        "replication",
+        "map",
+        "shuffle_sort",
+        "reduce",
+        "output_write"
+      ]
+    }
+  },
+  {
+    "id": "nlu_0134",
+    "student_input": "Load 1000 GB of e-commerce order logs into HDFS with block size 256 MB and join two datasets and summarize.",
+    "interpretation": {
+      "workload_type": "join_summary",
+      "input_data_type": "e-commerce order logs",
+      "input_size_gb": 1000,
+      "framework": "MapReduce",
+      "operation": "join_summary",
+      "block_size_mb": 256,
+      "replication_factor": 3,
+      "required_components": [
+        "HDFS",
+        "YARN",
+        "MapReduce"
+      ],
+      "expected_stages": [
+        "HDFS_split",
+        "block_distribution",
+        "replication",
+        "map",
+        "shuffle_sort",
+        "reduce",
+        "output_write"
+      ]
+    }
+  },
+  {
+    "id": "nlu_0135",
+    "student_input": "Run a Hadoop job on 500 GB financial transactions to filter records and aggregate by category, with replication factor 3.",
+    "interpretation": {
+      "workload_type": "filter_aggregate",
+      "input_data_type": "financial transactions",
+      "input_size_gb": 500,
+      "framework": "MapReduce",
+      "operation": "filter_aggregate",
+      "block_size_mb": 128,
+      "replication_factor": 3,
+      "required_components": [
+        "HDFS",
+        "YARN",
+        "MapReduce"
+      ],
+      "expected_stages": [
+        "HDFS_split",
+        "block_distribution",
+        "replication",
+        "map",
+        "shuffle_sort",
+        "reduce",
+        "output_write"
+      ]
+    }
+  },
+  {
+    "id": "nlu_0136",
+    "student_input": "What happens if I join two datasets and summarize on 1000 GB of web server logs using MapReduce?",
+    "interpretation": {
+      "workload_type": "join_summary",
+      "input_data_type": "web server logs",
+      "input_size_gb": 1000,
+      "framework": "MapReduce",
+      "operation": "join_summary",
+      "block_size_mb": 128,
+      "replication_factor": 3,
+      "required_components": [
+        "HDFS",
+        "YARN",
+        "MapReduce"
+      ],
+      "expected_stages": [
+        "HDFS_split",
+        "block_distribution",
+        "replication",
+        "map",
+        "shuffle_sort",
+        "reduce",
+        "output_write"
+      ]
+    }
+  },
+  {
+    "id": "nlu_0137",
+    "student_input": "I have 20 GB of sensor readings. Can you compute the average of a numeric field per group using Hadoop?",
+    "interpretation": {
+      "workload_type": "average_metric",
+      "input_data_type": "sensor readings",
+      "input_size_gb": 20,
+      "framework": "MapReduce",
+      "operation": "average_metric",
+      "block_size_mb": 128,
+      "replication_factor": 3,
+      "required_components": [
+        "HDFS",
+        "YARN",
+        "MapReduce"
+      ],
+      "expected_stages": [
+        "HDFS_split",
+        "block_distribution",
+        "replication",
+        "map",
+        "shuffle_sort",
+        "reduce",
+        "output_write"
+      ]
+    }
+  },
+  {
+    "id": "nlu_0138",
+    "student_input": "What happens if I count word frequency on 5 GB of CSV sales records using MapReduce?",
+    "interpretation": {
+      "workload_type": "word_count",
+      "input_data_type": "CSV sales records",
+      "input_size_gb": 5,
+      "framework": "MapReduce",
+      "operation": "word_count",
+      "block_size_mb": 128,
+      "replication_factor": 3,
+      "required_components": [
+        "HDFS",
+        "YARN",
+        "MapReduce"
+      ],
+      "expected_stages": [
+        "HDFS_split",
+        "block_distribution",
+        "replication",
+        "map",
+        "shuffle_sort",
+        "reduce",
+        "output_write"
+      ]
+    }
+  },
+  {
+    "id": "nlu_0139",
+    "student_input": "Use HDFS and MapReduce to count ERROR records per application on a 50 GB web server logs file.",
+    "interpretation": {
+      "workload_type": "error_count",
+      "input_data_type": "web server logs",
+      "input_size_gb": 50,
+      "framework": "MapReduce",
+      "operation": "error_count",
+      "block_size_mb": 128,
+      "replication_factor": 3,
+      "required_components": [
+        "HDFS",
+        "YARN",
+        "MapReduce"
+      ],
+      "expected_stages": [
+        "HDFS_split",
+        "block_distribution",
+        "replication",
+        "map",
+        "shuffle_sort",
+        "reduce",
+        "output_write"
+      ]
+    }
+  },
+  {
+    "id": "nlu_0140",
+    "student_input": "What happens if I compute the average of a numeric field per group on 500 GB of application error logs using MapReduce?",
+    "interpretation": {
+      "workload_type": "average_metric",
+      "input_data_type": "application error logs",
+      "input_size_gb": 500,
+      "framework": "MapReduce",
+      "operation": "average_metric",
+      "block_size_mb": 128,
+      "replication_factor": 3,
+      "required_components": [
+        "HDFS",
+        "YARN",
+        "MapReduce"
+      ],
+      "expected_stages": [
+        "HDFS_split",
+        "block_distribution",
+        "replication",
+        "map",
+        "shuffle_sort",
+        "reduce",
+        "output_write"
+      ]
+    }
+  },
+  {
+    "id": "nlu_0141",
+    "student_input": "I have 1000 GB of text corpus. Can you find the top N most frequent items using Hadoop?",
+    "interpretation": {
+      "workload_type": "top_n",
+      "input_data_type": "text corpus",
+      "input_size_gb": 1000,
+      "framework": "MapReduce",
+      "operation": "top_n",
+      "block_size_mb": 128,
+      "replication_factor": 3,
+      "required_components": [
+        "HDFS",
+        "YARN",
+        "MapReduce"
+      ],
+      "expected_stages": [
+        "HDFS_split",
+        "block_distribution",
+        "replication",
+        "map",
+        "shuffle_sort",
+        "reduce",
+        "output_write"
+      ]
+    }
+  },
+  {
+    "id": "nlu_0142",
+    "student_input": "I have 10 GB of sensor readings. Can you count ERROR records per application using Hadoop?",
+    "interpretation": {
+      "workload_type": "error_count",
+      "input_data_type": "sensor readings",
+      "input_size_gb": 10,
+      "framework": "MapReduce",
+      "operation": "error_count",
+      "block_size_mb": 128,
+      "replication_factor": 3,
+      "required_components": [
+        "HDFS",
+        "MapReduce"
+      ],
+      "expected_stages": [
+        "HDFS_split",
+        "block_distribution",
+        "replication",
+        "map",
+        "shuffle_sort",
+        "reduce",
+        "output_write"
+      ]
+    }
+  },
+  {
+    "id": "nlu_0143",
+    "student_input": "Load 1000 GB of e-commerce order logs into HDFS with block size 64 MB and filter records and aggregate by category.",
+    "interpretation": {
+      "workload_type": "filter_aggregate",
+      "input_data_type": "e-commerce order logs",
+      "input_size_gb": 1000,
+      "framework": "MapReduce",
+      "operation": "filter_aggregate",
+      "block_size_mb": 64,
+      "replication_factor": 3,
+      "required_components": [
+        "HDFS",
+        "YARN",
+        "MapReduce"
+      ],
+      "expected_stages": [
+        "HDFS_split",
+        "block_distribution",
+        "replication",
+        "map",
+        "shuffle_sort",
+        "reduce",
+        "output_write"
+      ]
+    }
+  },
+  {
+    "id": "nlu_0144",
+    "student_input": "Process a 50 GB social media posts dataset using Hadoop MapReduce and filter records and aggregate by category.",
+    "interpretation": {
+      "workload_type": "filter_aggregate",
+      "input_data_type": "social media posts",
+      "input_size_gb": 50,
+      "framework": "MapReduce",
+      "operation": "filter_aggregate",
+      "block_size_mb": 128,
+      "replication_factor": 3,
+      "required_components": [
+        "HDFS",
+        "YARN",
+        "MapReduce"
+      ],
+      "expected_stages": [
+        "HDFS_split",
+        "block_distribution",
+        "replication",
+        "map",
+        "shuffle_sort",
+        "reduce",
+        "output_write"
+      ]
+    }
+  },
+  {
+    "id": "nlu_0145",
+    "student_input": "Use HDFS and MapReduce to find the top N most frequent items on a 1000 GB web server logs file.",
+    "interpretation": {
+      "workload_type": "top_n",
+      "input_data_type": "web server logs",
+      "input_size_gb": 1000,
+      "framework": "MapReduce",
+      "operation": "top_n",
+      "block_size_mb": 128,
+      "replication_factor": 3,
+      "required_components": [
+        "HDFS",
+        "YARN",
+        "MapReduce"
+      ],
+      "expected_stages": [
+        "HDFS_split",
+        "block_distribution",
+        "replication",
+        "map",
+        "shuffle_sort",
+        "reduce",
+        "output_write"
+      ]
+    }
+  },
+  {
+    "id": "nlu_0146",
+    "student_input": "Use HDFS and MapReduce to count ERROR records per application on a 1 GB application error logs file.",
+    "interpretation": {
+      "workload_type": "error_count",
+      "input_data_type": "application error logs",
+      "input_size_gb": 1,
+      "framework": "MapReduce",
+      "operation": "error_count",
+      "block_size_mb": 128,
+      "replication_factor": 3,
+      "required_components": [
+        "HDFS",
+        "YARN",
+        "MapReduce"
+      ],
+      "expected_stages": [
+        "HDFS_split",
+        "block_distribution",
+        "replication",
+        "map",
+        "shuffle_sort",
+        "reduce",
+        "output_write"
+      ]
+    }
+  },
+  {
+    "id": "nlu_0147",
+    "student_input": "I have 10 GB of financial transactions. Can you join two datasets and summarize using Hadoop?",
+    "interpretation": {
+      "workload_type": "join_summary",
+      "input_data_type": "financial transactions",
+      "input_size_gb": 10,
+      "framework": "MapReduce",
+      "operation": "join_summary",
+      "block_size_mb": 128,
+      "replication_factor": 3,
+      "required_components": [
+        "HDFS",
+        "MapReduce"
+      ],
+      "expected_stages": [
+        "HDFS_split",
+        "block_distribution",
+        "replication",
+        "map",
+        "shuffle_sort",
+        "reduce",
+        "output_write"
+      ]
+    }
+  },
+  {
+    "id": "nlu_0148",
+    "student_input": "Load 200 GB of financial transactions into HDFS with block size 128 MB and count word frequency.",
+    "interpretation": {
+      "workload_type": "word_count",
+      "input_data_type": "financial transactions",
+      "input_size_gb": 200,
+      "framework": "MapReduce",
+      "operation": "word_count",
+      "block_size_mb": 128,
+      "replication_factor": 3,
+      "required_components": [
+        "HDFS",
+        "YARN",
+        "MapReduce"
+      ],
+      "expected_stages": [
+        "HDFS_split",
+        "block_distribution",
+        "replication",
+        "map",
+        "shuffle_sort",
+        "reduce",
+        "output_write"
+      ]
+    }
+  },
+  {
+    "id": "nlu_0149",
+    "student_input": "Use HDFS and MapReduce to compute the average of a numeric field per group on a 100 GB clickstream data file.",
+    "interpretation": {
+      "workload_type": "average_metric",
+      "input_data_type": "clickstream data",
+      "input_size_gb": 100,
+      "framework": "MapReduce",
+      "operation": "average_metric",
+      "block_size_mb": 128,
+      "replication_factor": 3,
+      "required_components": [
+        "HDFS",
+        "YARN",
+        "MapReduce"
+      ],
+      "expected_stages": [
+        "HDFS_split",
+        "block_distribution",
+        "replication",
+        "map",
+        "shuffle_sort",
+        "reduce",
+        "output_write"
+      ]
+    }
+  },
+  {
+    "id": "nlu_0150",
+    "student_input": "Process a 200 GB financial transactions dataset using Hadoop MapReduce and filter records and aggregate by category.",
+    "interpretation": {
+      "workload_type": "filter_aggregate",
+      "input_data_type": "financial transactions",
+      "input_size_gb": 200,
+      "framework": "MapReduce",
+      "operation": "filter_aggregate",
+      "block_size_mb": 128,
+      "replication_factor": 3,
+      "required_components": [
+        "HDFS",
+        "YARN",
+        "MapReduce"
+      ],
+      "expected_stages": [
+        "HDFS_split",
+        "block_distribution",
+        "replication",
+        "map",
+        "shuffle_sort",
+        "reduce",
+        "output_write"
+      ]
+    }
+  },
+  {
+    "id": "nlu_0151",
+    "student_input": "Process a 500 GB application error logs dataset using Hadoop MapReduce and filter records and aggregate by category.",
+    "interpretation": {
+      "workload_type": "filter_aggregate",
+      "input_data_type": "application error logs",
+      "input_size_gb": 500,
+      "framework": "MapReduce",
+      "operation": "filter_aggregate",
+      "block_size_mb": 128,
+      "replication_factor": 3,
+      "required_components": [
+        "HDFS",
+        "YARN",
+        "MapReduce"
+      ],
+      "expected_stages": [
+        "HDFS_split",
+        "block_distribution",
+        "replication",
+        "map",
+        "shuffle_sort",
+        "reduce",
+        "output_write"
+      ]
+    }
+  },
+  {
+    "id": "nlu_0152",
+    "student_input": "Process a 200 GB IoT telemetry dataset using Hadoop MapReduce and count word frequency.",
+    "interpretation": {
+      "workload_type": "word_count",
+      "input_data_type": "IoT telemetry",
+      "input_size_gb": 200,
+      "framework": "MapReduce",
+      "operation": "word_count",
+      "block_size_mb": 128,
+      "replication_factor": 3,
+      "required_components": [
+        "HDFS",
+        "YARN",
+        "MapReduce"
+      ],
+      "expected_stages": [
+        "HDFS_split",
+        "block_distribution",
+        "replication",
+        "map",
+        "shuffle_sort",
+        "reduce",
+        "output_write"
+      ]
+    }
+  },
+  {
+    "id": "nlu_0153",
+    "student_input": "Load 20 GB of IoT telemetry into HDFS with block size 256 MB and filter records and aggregate by category.",
+    "interpretation": {
+      "workload_type": "filter_aggregate",
+      "input_data_type": "IoT telemetry",
+      "input_size_gb": 20,
+      "framework": "MapReduce",
+      "operation": "filter_aggregate",
+      "block_size_mb": 256,
+      "replication_factor": 3,
+      "required_components": [
+        "HDFS",
+        "MapReduce"
+      ],
+      "expected_stages": [
+        "HDFS_split",
+        "block_distribution",
+        "replication",
+        "map",
+        "shuffle_sort",
+        "reduce",
+        "output_write"
+      ]
+    }
+  },
+  {
+    "id": "nlu_0154",
+    "student_input": "Load 20 GB of sensor readings into HDFS with block size 128 MB and join two datasets and summarize.",
+    "interpretation": {
+      "workload_type": "join_summary",
+      "input_data_type": "sensor readings",
+      "input_size_gb": 20,
+      "framework": "MapReduce",
+      "operation": "join_summary",
+      "block_size_mb": 128,
+      "replication_factor": 3,
+      "required_components": [
+        "HDFS",
+        "MapReduce"
+      ],
+      "expected_stages": [
+        "HDFS_split",
+        "block_distribution",
+        "replication",
+        "map",
+        "shuffle_sort",
+        "reduce",
+        "output_write"
+      ]
+    }
+  },
+  {
+    "id": "nlu_0155",
+    "student_input": "I have 500 GB of application error logs. Can you count word frequency using Hadoop?",
+    "interpretation": {
+      "workload_type": "word_count",
+      "input_data_type": "application error logs",
+      "input_size_gb": 500,
+      "framework": "MapReduce",
+      "operation": "word_count",
+      "block_size_mb": 128,
+      "replication_factor": 3,
+      "required_components": [
+        "HDFS",
+        "YARN",
+        "MapReduce"
+      ],
+      "expected_stages": [
+        "HDFS_split",
+        "block_distribution",
+        "replication",
+        "map",
+        "shuffle_sort",
+        "reduce",
+        "output_write"
+      ]
+    }
+  },
+  {
+    "id": "nlu_0156",
+    "student_input": "I have 50 GB of IoT telemetry. Can you count word frequency using Hadoop?",
+    "interpretation": {
+      "workload_type": "word_count",
+      "input_data_type": "IoT telemetry",
+      "input_size_gb": 50,
+      "framework": "MapReduce",
+      "operation": "word_count",
+      "block_size_mb": 128,
+      "replication_factor": 3,
+      "required_components": [
+        "HDFS",
+        "YARN",
+        "MapReduce"
+      ],
+      "expected_stages": [
+        "HDFS_split",
+        "block_distribution",
+        "replication",
+        "map",
+        "shuffle_sort",
+        "reduce",
+        "output_write"
+      ]
+    }
+  },
+  {
+    "id": "nlu_0157",
+    "student_input": "What happens if I count word frequency on 5 GB of financial transactions using MapReduce?",
+    "interpretation": {
+      "workload_type": "word_count",
+      "input_data_type": "financial transactions",
+      "input_size_gb": 5,
+      "framework": "MapReduce",
+      "operation": "word_count",
+      "block_size_mb": 128,
+      "replication_factor": 3,
+      "required_components": [
+        "HDFS",
+        "YARN",
+        "MapReduce"
+      ],
+      "expected_stages": [
+        "HDFS_split",
+        "block_distribution",
+        "replication",
+        "map",
+        "shuffle_sort",
+        "reduce",
+        "output_write"
+      ]
+    }
+  },
+  {
+    "id": "nlu_0158",
+    "student_input": "Load 50 GB of social media posts into HDFS with block size 64 MB and find the top N most frequent items.",
+    "interpretation": {
+      "workload_type": "top_n",
+      "input_data_type": "social media posts",
+      "input_size_gb": 50,
+      "framework": "MapReduce",
+      "operation": "top_n",
+      "block_size_mb": 64,
+      "replication_factor": 3,
+      "required_components": [
+        "HDFS",
+        "YARN",
+        "MapReduce"
+      ],
+      "expected_stages": [
+        "HDFS_split",
+        "block_distribution",
+        "replication",
+        "map",
+        "shuffle_sort",
+        "reduce",
+        "output_write"
+      ]
+    }
+  },
+  {
+    "id": "nlu_0159",
+    "student_input": "Run a Hadoop job on 750 GB CSV sales records to find the top N most frequent items, with replication factor 2.",
+    "interpretation": {
+      "workload_type": "top_n",
+      "input_data_type": "CSV sales records",
+      "input_size_gb": 750,
+      "framework": "MapReduce",
+      "operation": "top_n",
+      "block_size_mb": 128,
+      "replication_factor": 2,
+      "required_components": [
+        "HDFS",
+        "YARN",
+        "MapReduce"
+      ],
+      "expected_stages": [
+        "HDFS_split",
+        "block_distribution",
+        "replication",
+        "map",
+        "shuffle_sort",
+        "reduce",
+        "output_write"
+      ]
+    }
+  },
+  {
+    "id": "nlu_0160",
+    "student_input": "Run a Hadoop job on 10 GB application error logs to filter records and aggregate by category, with replication factor 3.",
+    "interpretation": {
+      "workload_type": "filter_aggregate",
+      "input_data_type": "application error logs",
+      "input_size_gb": 10,
+      "framework": "MapReduce",
+      "operation": "filter_aggregate",
+      "block_size_mb": 128,
+      "replication_factor": 3,
+      "required_components": [
+        "HDFS",
+        "YARN",
+        "MapReduce"
+      ],
+      "expected_stages": [
+        "HDFS_split",
+        "block_distribution",
+        "replication",
+        "map",
+        "shuffle_sort",
+        "reduce",
+        "output_write"
+      ]
+    }
+  },
+  {
+    "id": "nlu_0161",
+    "student_input": "Run a Hadoop job on 1 GB sensor readings to compute the average of a numeric field per group, with replication factor 3.",
+    "interpretation": {
+      "workload_type": "average_metric",
+      "input_data_type": "sensor readings",
+      "input_size_gb": 1,
+      "framework": "MapReduce",
+      "operation": "average_metric",
+      "block_size_mb": 128,
+      "replication_factor": 3,
+      "required_components": [
+        "HDFS",
+        "MapReduce"
+      ],
+      "expected_stages": [
+        "HDFS_split",
+        "block_distribution",
+        "replication",
+        "map",
+        "shuffle_sort",
+        "reduce",
+        "output_write"
+      ]
+    }
+  },
+  {
+    "id": "nlu_0162",
+    "student_input": "Use HDFS and MapReduce to find the top N most frequent items on a 500 GB CSV sales records file.",
+    "interpretation": {
+      "workload_type": "top_n",
+      "input_data_type": "CSV sales records",
+      "input_size_gb": 500,
+      "framework": "MapReduce",
+      "operation": "top_n",
+      "block_size_mb": 128,
+      "replication_factor": 3,
+      "required_components": [
+        "HDFS",
+        "YARN",
+        "MapReduce"
+      ],
+      "expected_stages": [
+        "HDFS_split",
+        "block_distribution",
+        "replication",
+        "map",
+        "shuffle_sort",
+        "reduce",
+        "output_write"
+      ]
+    }
+  },
+  {
+    "id": "nlu_0163",
+    "student_input": "I have 750 GB of IoT telemetry. Can you find the top N most frequent items using Hadoop?",
+    "interpretation": {
+      "workload_type": "top_n",
+      "input_data_type": "IoT telemetry",
+      "input_size_gb": 750,
+      "framework": "MapReduce",
+      "operation": "top_n",
+      "block_size_mb": 128,
+      "replication_factor": 3,
+      "required_components": [
+        "HDFS",
+        "YARN",
+        "MapReduce"
+      ],
+      "expected_stages": [
+        "HDFS_split",
+        "block_distribution",
+        "replication",
+        "map",
+        "shuffle_sort",
+        "reduce",
+        "output_write"
+      ]
+    }
+  },
+  {
+    "id": "nlu_0164",
+    "student_input": "Process a 20 GB e-commerce order logs dataset using Hadoop MapReduce and find the top N most frequent items.",
+    "interpretation": {
+      "workload_type": "top_n",
+      "input_data_type": "e-commerce order logs",
+      "input_size_gb": 20,
+      "framework": "MapReduce",
+      "operation": "top_n",
+      "block_size_mb": 128,
+      "replication_factor": 3,
+      "required_components": [
+        "HDFS",
+        "YARN",
+        "MapReduce"
+      ],
+      "expected_stages": [
+        "HDFS_split",
+        "block_distribution",
+        "replication",
+        "map",
+        "shuffle_sort",
+        "reduce",
+        "output_write"
+      ]
+    }
+  },
+  {
+    "id": "nlu_0165",
+    "student_input": "Process a 500 GB social media posts dataset using Hadoop MapReduce and find the top N most frequent items.",
+    "interpretation": {
+      "workload_type": "top_n",
+      "input_data_type": "social media posts",
+      "input_size_gb": 500,
+      "framework": "MapReduce",
+      "operation": "top_n",
+      "block_size_mb": 128,
+      "replication_factor": 3,
+      "required_components": [
+        "HDFS",
+        "YARN",
+        "MapReduce"
+      ],
+      "expected_stages": [
+        "HDFS_split",
+        "block_distribution",
+        "replication",
+        "map",
+        "shuffle_sort",
+        "reduce",
+        "output_write"
+      ]
+    }
+  },
+  {
+    "id": "nlu_0166",
+    "student_input": "Load 10 GB of IoT telemetry into HDFS with block size 64 MB and join two datasets and summarize.",
+    "interpretation": {
+      "workload_type": "join_summary",
+      "input_data_type": "IoT telemetry",
+      "input_size_gb": 10,
+      "framework": "MapReduce",
+      "operation": "join_summary",
+      "block_size_mb": 64,
+      "replication_factor": 3,
+      "required_components": [
+        "HDFS",
+        "YARN",
+        "MapReduce"
+      ],
+      "expected_stages": [
+        "HDFS_split",
+        "block_distribution",
+        "replication",
+        "map",
+        "shuffle_sort",
+        "reduce",
+        "output_write"
+      ]
+    }
+  },
+  {
+    "id": "nlu_0167",
+    "student_input": "What happens if I compute the average of a numeric field per group on 500 GB of web server logs using MapReduce?",
+    "interpretation": {
+      "workload_type": "average_metric",
+      "input_data_type": "web server logs",
+      "input_size_gb": 500,
+      "framework": "MapReduce",
+      "operation": "average_metric",
+      "block_size_mb": 128,
+      "replication_factor": 3,
+      "required_components": [
+        "HDFS",
+        "YARN",
+        "MapReduce"
+      ],
+      "expected_stages": [
+        "HDFS_split",
+        "block_distribution",
+        "replication",
+        "map",
+        "shuffle_sort",
+        "reduce",
+        "output_write"
+      ]
+    }
+  },
+  {
+    "id": "nlu_0168",
+    "student_input": "Run a Hadoop job on 10 GB application error logs to find the top N most frequent items, with replication factor 3.",
+    "interpretation": {
+      "workload_type": "top_n",
+      "input_data_type": "application error logs",
+      "input_size_gb": 10,
+      "framework": "MapReduce",
+      "operation": "top_n",
+      "block_size_mb": 128,
+      "replication_factor": 3,
+      "required_components": [
+        "HDFS",
+        "MapReduce"
+      ],
+      "expected_stages": [
+        "HDFS_split",
+        "block_distribution",
+        "replication",
+        "map",
+        "shuffle_sort",
+        "reduce",
+        "output_write"
+      ]
+    }
+  },
+  {
+    "id": "nlu_0169",
+    "student_input": "What happens if I compute the average of a numeric field per group on 5 GB of clickstream data using MapReduce?",
+    "interpretation": {
+      "workload_type": "average_metric",
+      "input_data_type": "clickstream data",
+      "input_size_gb": 5,
+      "framework": "MapReduce",
+      "operation": "average_metric",
+      "block_size_mb": 128,
+      "replication_factor": 3,
+      "required_components": [
+        "HDFS",
+        "MapReduce"
+      ],
+      "expected_stages": [
+        "HDFS_split",
+        "block_distribution",
+        "replication",
+        "map",
+        "shuffle_sort",
+        "reduce",
+        "output_write"
+      ]
+    }
+  },
+  {
+    "id": "nlu_0170",
+    "student_input": "What happens if I count word frequency on 500 GB of IoT telemetry using MapReduce?",
+    "interpretation": {
+      "workload_type": "word_count",
+      "input_data_type": "IoT telemetry",
+      "input_size_gb": 500,
+      "framework": "MapReduce",
+      "operation": "word_count",
+      "block_size_mb": 128,
+      "replication_factor": 3,
+      "required_components": [
+        "HDFS",
+        "YARN",
+        "MapReduce"
+      ],
+      "expected_stages": [
+        "HDFS_split",
+        "block_distribution",
+        "replication",
+        "map",
+        "shuffle_sort",
+        "reduce",
+        "output_write"
+      ]
+    }
+  },
+  {
+    "id": "nlu_0171",
+    "student_input": "Process a 50 GB text corpus dataset using Hadoop MapReduce and compute the average of a numeric field per group.",
+    "interpretation": {
+      "workload_type": "average_metric",
+      "input_data_type": "text corpus",
+      "input_size_gb": 50,
+      "framework": "MapReduce",
+      "operation": "average_metric",
+      "block_size_mb": 128,
+      "replication_factor": 3,
+      "required_components": [
+        "HDFS",
+        "YARN",
+        "MapReduce"
+      ],
+      "expected_stages": [
+        "HDFS_split",
+        "block_distribution",
+        "replication",
+        "map",
+        "shuffle_sort",
+        "reduce",
+        "output_write"
+      ]
+    }
+  },
+  {
+    "id": "nlu_0172",
+    "student_input": "Process a 5 GB financial transactions dataset using Hadoop MapReduce and count ERROR records per application.",
+    "interpretation": {
+      "workload_type": "error_count",
+      "input_data_type": "financial transactions",
+      "input_size_gb": 5,
+      "framework": "MapReduce",
+      "operation": "error_count",
+      "block_size_mb": 128,
+      "replication_factor": 3,
+      "required_components": [
+        "HDFS",
+        "YARN",
+        "MapReduce"
+      ],
+      "expected_stages": [
+        "HDFS_split",
+        "block_distribution",
+        "replication",
+        "map",
+        "shuffle_sort",
+        "reduce",
+        "output_write"
+      ]
+    }
+  },
+  {
+    "id": "nlu_0173",
+    "student_input": "I have 1 GB of sensor readings. Can you filter records and aggregate by category using Hadoop?",
+    "interpretation": {
+      "workload_type": "filter_aggregate",
+      "input_data_type": "sensor readings",
+      "input_size_gb": 1,
+      "framework": "MapReduce",
+      "operation": "filter_aggregate",
+      "block_size_mb": 128,
+      "replication_factor": 3,
+      "required_components": [
+        "HDFS",
+        "YARN",
+        "MapReduce"
+      ],
+      "expected_stages": [
+        "HDFS_split",
+        "block_distribution",
+        "replication",
+        "map",
+        "shuffle_sort",
+        "reduce",
+        "output_write"
+      ]
+    }
+  },
+  {
+    "id": "nlu_0174",
+    "student_input": "I have 200 GB of e-commerce order logs. Can you compute the average of a numeric field per group using Hadoop?",
+    "interpretation": {
+      "workload_type": "average_metric",
+      "input_data_type": "e-commerce order logs",
+      "input_size_gb": 200,
+      "framework": "MapReduce",
+      "operation": "average_metric",
+      "block_size_mb": 128,
+      "replication_factor": 3,
+      "required_components": [
+        "HDFS",
+        "YARN",
+        "MapReduce"
+      ],
+      "expected_stages": [
+        "HDFS_split",
+        "block_distribution",
+        "replication",
+        "map",
+        "shuffle_sort",
+        "reduce",
+        "output_write"
+      ]
+    }
+  },
+  {
+    "id": "nlu_0175",
+    "student_input": "Run a Hadoop job on 5 GB e-commerce order logs to find the top N most frequent items, with replication factor 2.",
+    "interpretation": {
+      "workload_type": "top_n",
+      "input_data_type": "e-commerce order logs",
+      "input_size_gb": 5,
+      "framework": "MapReduce",
+      "operation": "top_n",
+      "block_size_mb": 128,
+      "replication_factor": 2,
+      "required_components": [
+        "HDFS",
+        "YARN",
+        "MapReduce"
+      ],
+      "expected_stages": [
+        "HDFS_split",
+        "block_distribution",
+        "replication",
+        "map",
+        "shuffle_sort",
+        "reduce",
+        "output_write"
+      ]
+    }
+  },
+  {
+    "id": "nlu_0176",
+    "student_input": "Process a 500 GB sensor readings dataset using Hadoop MapReduce and find the top N most frequent items.",
+    "interpretation": {
+      "workload_type": "top_n",
+      "input_data_type": "sensor readings",
+      "input_size_gb": 500,
+      "framework": "MapReduce",
+      "operation": "top_n",
+      "block_size_mb": 128,
+      "replication_factor": 3,
+      "required_components": [
+        "HDFS",
+        "YARN",
+        "MapReduce"
+      ],
+      "expected_stages": [
+        "HDFS_split",
+        "block_distribution",
+        "replication",
+        "map",
+        "shuffle_sort",
+        "reduce",
+        "output_write"
+      ]
+    }
+  },
+  {
+    "id": "nlu_0177",
+    "student_input": "Load 500 GB of sensor readings into HDFS with block size 64 MB and compute the average of a numeric field per group.",
+    "interpretation": {
+      "workload_type": "average_metric",
+      "input_data_type": "sensor readings",
+      "input_size_gb": 500,
+      "framework": "MapReduce",
+      "operation": "average_metric",
+      "block_size_mb": 64,
+      "replication_factor": 3,
+      "required_components": [
+        "HDFS",
+        "YARN",
+        "MapReduce"
+      ],
+      "expected_stages": [
+        "HDFS_split",
+        "block_distribution",
+        "replication",
+        "map",
+        "shuffle_sort",
+        "reduce",
+        "output_write"
+      ]
+    }
+  },
+  {
+    "id": "nlu_0178",
+    "student_input": "Use HDFS and MapReduce to filter records and aggregate by category on a 100 GB e-commerce order logs file.",
+    "interpretation": {
+      "workload_type": "filter_aggregate",
+      "input_data_type": "e-commerce order logs",
+      "input_size_gb": 100,
+      "framework": "MapReduce",
+      "operation": "filter_aggregate",
+      "block_size_mb": 128,
+      "replication_factor": 3,
+      "required_components": [
+        "HDFS",
+        "YARN",
+        "MapReduce"
+      ],
+      "expected_stages": [
+        "HDFS_split",
+        "block_distribution",
+        "replication",
+        "map",
+        "shuffle_sort",
+        "reduce",
+        "output_write"
+      ]
+    }
+  },
+  {
+    "id": "nlu_0179",
+    "student_input": "Process a 500 GB sensor readings dataset using Hadoop MapReduce and count ERROR records per application.",
+    "interpretation": {
+      "workload_type": "error_count",
+      "input_data_type": "sensor readings",
+      "input_size_gb": 500,
+      "framework": "MapReduce",
+      "operation": "error_count",
+      "block_size_mb": 128,
+      "replication_factor": 3,
+      "required_components": [
+        "HDFS",
+        "YARN",
+        "MapReduce"
+      ],
+      "expected_stages": [
+        "HDFS_split",
+        "block_distribution",
+        "replication",
+        "map",
+        "shuffle_sort",
+        "reduce",
+        "output_write"
+      ]
+    }
+  },
+  {
+    "id": "nlu_0180",
+    "student_input": "Use HDFS and MapReduce to join two datasets and summarize on a 20 GB social media posts file.",
+    "interpretation": {
+      "workload_type": "join_summary",
+      "input_data_type": "social media posts",
+      "input_size_gb": 20,
+      "framework": "MapReduce",
+      "operation": "join_summary",
+      "block_size_mb": 128,
+      "replication_factor": 3,
+      "required_components": [
+        "HDFS",
+        "MapReduce"
+      ],
+      "expected_stages": [
+        "HDFS_split",
+        "block_distribution",
+        "replication",
+        "map",
+        "shuffle_sort",
+        "reduce",
+        "output_write"
+      ]
+    }
+  },
+  {
+    "id": "nlu_0181",
+    "student_input": "Process a 50 GB web server logs dataset using Hadoop MapReduce and compute the average of a numeric field per group.",
+    "interpretation": {
+      "workload_type": "average_metric",
+      "input_data_type": "web server logs",
+      "input_size_gb": 50,
+      "framework": "MapReduce",
+      "operation": "average_metric",
+      "block_size_mb": 128,
+      "replication_factor": 3,
+      "required_components": [
+        "HDFS",
+        "YARN",
+        "MapReduce"
+      ],
+      "expected_stages": [
+        "HDFS_split",
+        "block_distribution",
+        "replication",
+        "map",
+        "shuffle_sort",
+        "reduce",
+        "output_write"
+      ]
+    }
+  },
+  {
+    "id": "nlu_0182",
+    "student_input": "I have 1000 GB of web server logs. Can you join two datasets and summarize using Hadoop?",
+    "interpretation": {
+      "workload_type": "join_summary",
+      "input_data_type": "web server logs",
+      "input_size_gb": 1000,
+      "framework": "MapReduce",
+      "operation": "join_summary",
+      "block_size_mb": 128,
+      "replication_factor": 3,
+      "required_components": [
+        "HDFS",
+        "YARN",
+        "MapReduce"
+      ],
+      "expected_stages": [
+        "HDFS_split",
+        "block_distribution",
+        "replication",
+        "map",
+        "shuffle_sort",
+        "reduce",
+        "output_write"
+      ]
+    }
+  },
+  {
+    "id": "nlu_0183",
+    "student_input": "Use HDFS and MapReduce to count ERROR records per application on a 1000 GB clickstream data file.",
+    "interpretation": {
+      "workload_type": "error_count",
+      "input_data_type": "clickstream data",
+      "input_size_gb": 1000,
+      "framework": "MapReduce",
+      "operation": "error_count",
+      "block_size_mb": 128,
+      "replication_factor": 3,
+      "required_components": [
+        "HDFS",
+        "YARN",
+        "MapReduce"
+      ],
+      "expected_stages": [
+        "HDFS_split",
+        "block_distribution",
+        "replication",
+        "map",
+        "shuffle_sort",
+        "reduce",
+        "output_write"
+      ]
+    }
+  },
+  {
+    "id": "nlu_0184",
+    "student_input": "Load 10 GB of application error logs into HDFS with block size 128 MB and compute the average of a numeric field per group.",
+    "interpretation": {
+      "workload_type": "average_metric",
+      "input_data_type": "application error logs",
+      "input_size_gb": 10,
+      "framework": "MapReduce",
+      "operation": "average_metric",
+      "block_size_mb": 128,
+      "replication_factor": 3,
+      "required_components": [
+        "HDFS",
+        "YARN",
+        "MapReduce"
+      ],
+      "expected_stages": [
+        "HDFS_split",
+        "block_distribution",
+        "replication",
+        "map",
+        "shuffle_sort",
+        "reduce",
+        "output_write"
+      ]
+    }
+  },
+  {
+    "id": "nlu_0185",
+    "student_input": "What happens if I count word frequency on 100 GB of CSV sales records using MapReduce?",
+    "interpretation": {
+      "workload_type": "word_count",
+      "input_data_type": "CSV sales records",
+      "input_size_gb": 100,
+      "framework": "MapReduce",
+      "operation": "word_count",
+      "block_size_mb": 128,
+      "replication_factor": 3,
+      "required_components": [
+        "HDFS",
+        "YARN",
+        "MapReduce"
+      ],
+      "expected_stages": [
+        "HDFS_split",
+        "block_distribution",
+        "replication",
+        "map",
+        "shuffle_sort",
+        "reduce",
+        "output_write"
+      ]
+    }
+  },
+  {
+    "id": "nlu_0186",
+    "student_input": "Use HDFS and MapReduce to count ERROR records per application on a 200 GB CSV sales records file.",
+    "interpretation": {
+      "workload_type": "error_count",
+      "input_data_type": "CSV sales records",
+      "input_size_gb": 200,
+      "framework": "MapReduce",
+      "operation": "error_count",
+      "block_size_mb": 128,
+      "replication_factor": 3,
+      "required_components": [
+        "HDFS",
+        "YARN",
+        "MapReduce"
+      ],
+      "expected_stages": [
+        "HDFS_split",
+        "block_distribution",
+        "replication",
+        "map",
+        "shuffle_sort",
+        "reduce",
+        "output_write"
+      ]
+    }
+  },
+  {
+    "id": "nlu_0187",
+    "student_input": "Load 750 GB of IoT telemetry into HDFS with block size 128 MB and filter records and aggregate by category.",
+    "interpretation": {
+      "workload_type": "filter_aggregate",
+      "input_data_type": "IoT telemetry",
+      "input_size_gb": 750,
+      "framework": "MapReduce",
+      "operation": "filter_aggregate",
+      "block_size_mb": 128,
+      "replication_factor": 3,
+      "required_components": [
+        "HDFS",
+        "YARN",
+        "MapReduce"
+      ],
+      "expected_stages": [
+        "HDFS_split",
+        "block_distribution",
+        "replication",
+        "map",
+        "shuffle_sort",
+        "reduce",
+        "output_write"
+      ]
+    }
+  },
+  {
+    "id": "nlu_0188",
+    "student_input": "I have 50 GB of clickstream data. Can you count word frequency using Hadoop?",
+    "interpretation": {
+      "workload_type": "word_count",
+      "input_data_type": "clickstream data",
+      "input_size_gb": 50,
+      "framework": "MapReduce",
+      "operation": "word_count",
+      "block_size_mb": 128,
+      "replication_factor": 3,
+      "required_components": [
+        "HDFS",
+        "YARN",
+        "MapReduce"
+      ],
+      "expected_stages": [
+        "HDFS_split",
+        "block_distribution",
+        "replication",
+        "map",
+        "shuffle_sort",
+        "reduce",
+        "output_write"
+      ]
+    }
+  },
+  {
+    "id": "nlu_0189",
+    "student_input": "Load 20 GB of social media posts into HDFS with block size 64 MB and join two datasets and summarize.",
+    "interpretation": {
+      "workload_type": "join_summary",
+      "input_data_type": "social media posts",
+      "input_size_gb": 20,
+      "framework": "MapReduce",
+      "operation": "join_summary",
+      "block_size_mb": 64,
+      "replication_factor": 3,
+      "required_components": [
+        "HDFS",
+        "YARN",
+        "MapReduce"
+      ],
+      "expected_stages": [
+        "HDFS_split",
+        "block_distribution",
+        "replication",
+        "map",
+        "shuffle_sort",
+        "reduce",
+        "output_write"
+      ]
+    }
+  },
+  {
+    "id": "nlu_0190",
+    "student_input": "What happens if I find the top N most frequent items on 750 GB of application error logs using MapReduce?",
+    "interpretation": {
+      "workload_type": "top_n",
+      "input_data_type": "application error logs",
+      "input_size_gb": 750,
+      "framework": "MapReduce",
+      "operation": "top_n",
+      "block_size_mb": 128,
+      "replication_factor": 3,
+      "required_components": [
+        "HDFS",
+        "YARN",
+        "MapReduce"
+      ],
+      "expected_stages": [
+        "HDFS_split",
+        "block_distribution",
+        "replication",
+        "map",
+        "shuffle_sort",
+        "reduce",
+        "output_write"
+      ]
+    }
+  },
+  {
+    "id": "nlu_0191",
+    "student_input": "What happens if I find the top N most frequent items on 50 GB of e-commerce order logs using MapReduce?",
+    "interpretation": {
+      "workload_type": "top_n",
+      "input_data_type": "e-commerce order logs",
+      "input_size_gb": 50,
+      "framework": "MapReduce",
+      "operation": "top_n",
+      "block_size_mb": 128,
+      "replication_factor": 3,
+      "required_components": [
+        "HDFS",
+        "YARN",
+        "MapReduce"
+      ],
+      "expected_stages": [
+        "HDFS_split",
+        "block_distribution",
+        "replication",
+        "map",
+        "shuffle_sort",
+        "reduce",
+        "output_write"
+      ]
+    }
+  },
+  {
+    "id": "nlu_0192",
+    "student_input": "I have 20 GB of financial transactions. Can you count word frequency using Hadoop?",
+    "interpretation": {
+      "workload_type": "word_count",
+      "input_data_type": "financial transactions",
+      "input_size_gb": 20,
+      "framework": "MapReduce",
+      "operation": "word_count",
+      "block_size_mb": 128,
+      "replication_factor": 3,
+      "required_components": [
+        "HDFS",
+        "MapReduce"
+      ],
+      "expected_stages": [
+        "HDFS_split",
+        "block_distribution",
+        "replication",
+        "map",
+        "shuffle_sort",
+        "reduce",
+        "output_write"
+      ]
+    }
+  },
+  {
+    "id": "nlu_0193",
+    "student_input": "I have 500 GB of sensor readings. Can you compute the average of a numeric field per group using Hadoop?",
+    "interpretation": {
+      "workload_type": "average_metric",
+      "input_data_type": "sensor readings",
+      "input_size_gb": 500,
+      "framework": "MapReduce",
+      "operation": "average_metric",
+      "block_size_mb": 128,
+      "replication_factor": 3,
+      "required_components": [
+        "HDFS",
+        "YARN",
+        "MapReduce"
+      ],
+      "expected_stages": [
+        "HDFS_split",
+        "block_distribution",
+        "replication",
+        "map",
+        "shuffle_sort",
+        "reduce",
+        "output_write"
+      ]
+    }
+  },
+  {
+    "id": "nlu_0194",
+    "student_input": "Process a 1 GB web server logs dataset using Hadoop MapReduce and filter records and aggregate by category.",
+    "interpretation": {
+      "workload_type": "filter_aggregate",
+      "input_data_type": "web server logs",
+      "input_size_gb": 1,
+      "framework": "MapReduce",
+      "operation": "filter_aggregate",
+      "block_size_mb": 128,
+      "replication_factor": 3,
+      "required_components": [
+        "HDFS",
+        "YARN",
+        "MapReduce"
+      ],
+      "expected_stages": [
+        "HDFS_split",
+        "block_distribution",
+        "replication",
+        "map",
+        "shuffle_sort",
+        "reduce",
+        "output_write"
+      ]
+    }
+  },
+  {
+    "id": "nlu_0195",
+    "student_input": "What happens if I find the top N most frequent items on 750 GB of CSV sales records using MapReduce?",
+    "interpretation": {
+      "workload_type": "top_n",
+      "input_data_type": "CSV sales records",
+      "input_size_gb": 750,
+      "framework": "MapReduce",
+      "operation": "top_n",
+      "block_size_mb": 128,
+      "replication_factor": 3,
+      "required_components": [
+        "HDFS",
+        "YARN",
+        "MapReduce"
+      ],
+      "expected_stages": [
+        "HDFS_split",
+        "block_distribution",
+        "replication",
+        "map",
+        "shuffle_sort",
+        "reduce",
+        "output_write"
+      ]
+    }
+  },
+  {
+    "id": "nlu_0196",
+    "student_input": "What happens if I join two datasets and summarize on 750 GB of social media posts using MapReduce?",
+    "interpretation": {
+      "workload_type": "join_summary",
+      "input_data_type": "social media posts",
+      "input_size_gb": 750,
+      "framework": "MapReduce",
+      "operation": "join_summary",
+      "block_size_mb": 128,
+      "replication_factor": 3,
+      "required_components": [
+        "HDFS",
+        "YARN",
+        "MapReduce"
+      ],
+      "expected_stages": [
+        "HDFS_split",
+        "block_distribution",
+        "replication",
+        "map",
+        "shuffle_sort",
+        "reduce",
+        "output_write"
+      ]
+    }
+  },
+  {
+    "id": "nlu_0197",
+    "student_input": "Process a 5 GB financial transactions dataset using Hadoop MapReduce and join two datasets and summarize.",
+    "interpretation": {
+      "workload_type": "join_summary",
+      "input_data_type": "financial transactions",
+      "input_size_gb": 5,
+      "framework": "MapReduce",
+      "operation": "join_summary",
+      "block_size_mb": 128,
+      "replication_factor": 3,
+      "required_components": [
+        "HDFS",
+        "MapReduce"
+      ],
+      "expected_stages": [
+        "HDFS_split",
+        "block_distribution",
+        "replication",
+        "map",
+        "shuffle_sort",
+        "reduce",
+        "output_write"
+      ]
+    }
+  },
+  {
+    "id": "nlu_0198",
+    "student_input": "Process a 20 GB financial transactions dataset using Hadoop MapReduce and find the top N most frequent items.",
+    "interpretation": {
+      "workload_type": "top_n",
+      "input_data_type": "financial transactions",
+      "input_size_gb": 20,
+      "framework": "MapReduce",
+      "operation": "top_n",
+      "block_size_mb": 128,
+      "replication_factor": 3,
+      "required_components": [
+        "HDFS",
+        "MapReduce"
+      ],
+      "expected_stages": [
+        "HDFS_split",
+        "block_distribution",
+        "replication",
+        "map",
+        "shuffle_sort",
+        "reduce",
+        "output_write"
+      ]
+    }
+  },
+  {
+    "id": "nlu_0199",
+    "student_input": "Load 100 GB of IoT telemetry into HDFS with block size 64 MB and compute the average of a numeric field per group.",
+    "interpretation": {
+      "workload_type": "average_metric",
+      "input_data_type": "IoT telemetry",
+      "input_size_gb": 100,
+      "framework": "MapReduce",
+      "operation": "average_metric",
+      "block_size_mb": 64,
+      "replication_factor": 3,
+      "required_components": [
+        "HDFS",
+        "YARN",
+        "MapReduce"
+      ],
+      "expected_stages": [
+        "HDFS_split",
+        "block_distribution",
+        "replication",
+        "map",
+        "shuffle_sort",
+        "reduce",
+        "output_write"
+      ]
+    }
+  },
+  {
+    "id": "nlu_0200",
+    "student_input": "What happens if I count word frequency on 50 GB of text corpus using MapReduce?",
+    "interpretation": {
+      "workload_type": "word_count",
+      "input_data_type": "text corpus",
+      "input_size_gb": 50,
+      "framework": "MapReduce",
+      "operation": "word_count",
+      "block_size_mb": 128,
+      "replication_factor": 3,
+      "required_components": [
+        "HDFS",
+        "YARN",
+        "MapReduce"
+      ],
+      "expected_stages": [
+        "HDFS_split",
+        "block_distribution",
+        "replication",
+        "map",
+        "shuffle_sort",
+        "reduce",
+        "output_write"
+      ]
+    }
+  }
+]

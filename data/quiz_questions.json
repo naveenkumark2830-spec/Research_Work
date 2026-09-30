@@ -1,0 +1,132 @@
+[
+  {
+    "id": "Q01",
+    "topic": "HDFS",
+    "difficulty": "easy",
+    "question": "What is the primary role of the NameNode in HDFS?",
+    "options": [
+      "Stores the actual file data",
+      "Manages filesystem metadata and block locations",
+      "Executes Map tasks",
+      "Allocates CPU to containers"
+    ],
+    "correct_answer": "Manages filesystem metadata and block locations"
+  },
+  {
+    "id": "Q02",
+    "topic": "HDFS",
+    "difficulty": "easy",
+    "question": "If block size is 128 MB and a file is 500 MB, how many blocks does it split into?",
+    "options": [
+      "2",
+      "3",
+      "4",
+      "5"
+    ],
+    "correct_answer": "4"
+  },
+  {
+    "id": "Q03",
+    "topic": "HDFS",
+    "difficulty": "medium",
+    "question": "Why does HDFS replicate blocks across multiple DataNodes?",
+    "options": [
+      "To speed up the NameNode",
+      "For fault tolerance and data availability",
+      "To reduce block size",
+      "To increase metadata size"
+    ],
+    "correct_answer": "For fault tolerance and data availability"
+  },
+  {
+    "id": "Q04",
+    "topic": "YARN",
+    "difficulty": "easy",
+    "question": "Which component is responsible for allocating cluster resources to applications?",
+    "options": [
+      "NameNode",
+      "DataNode",
+      "ResourceManager",
+      "Reducer"
+    ],
+    "correct_answer": "ResourceManager"
+  },
+  {
+    "id": "Q05",
+    "topic": "YARN",
+    "difficulty": "medium",
+    "question": "A NodeManager reports 8 CPU cores and each Map task needs 1 core. How many Map containers can run concurrently on that node (ignoring memory limits)?",
+    "options": [
+      "1",
+      "4",
+      "8",
+      "16"
+    ],
+    "correct_answer": "8"
+  },
+  {
+    "id": "Q06",
+    "topic": "MapReduce",
+    "difficulty": "easy",
+    "question": "What happens during the Shuffle and Sort phase?",
+    "options": [
+      "Input files are split into blocks",
+      "Intermediate key-value pairs are grouped and transferred to Reducers",
+      "The final output is written to HDFS",
+      "The client submits the job"
+    ],
+    "correct_answer": "Intermediate key-value pairs are grouped and transferred to Reducers"
+  },
+  {
+    "id": "Q07",
+    "topic": "MapReduce",
+    "difficulty": "medium",
+    "question": "In a Word Count job, what does a Mapper typically emit?",
+    "options": [
+      "(filename, total count)",
+      "(word, 1) for each occurrence",
+      "(block_id, replica_list)",
+      "(node_id, CPU usage)"
+    ],
+    "correct_answer": "(word, 1) for each occurrence"
+  },
+  {
+    "id": "Q08",
+    "topic": "Fault Tolerance",
+    "difficulty": "medium",
+    "question": "A DataNode holding a replica of Block_5 fails during the Map phase. What is the most likely outcome if other replicas exist?",
+    "options": [
+      "The job fails immediately",
+      "The job continues using another replica of Block_5",
+      "Block_5 is permanently lost",
+      "The NameNode crashes"
+    ],
+    "correct_answer": "The job continues using another replica of Block_5"
+  },
+  {
+    "id": "Q09",
+    "topic": "Fault Tolerance",
+    "difficulty": "hard",
+    "question": "Why can data still be lost even with replication factor 3?",
+    "options": [
+      "Replication never actually protects data",
+      "If all nodes holding a block's replicas fail at once, that block becomes unavailable",
+      "The NameNode deletes replicas randomly",
+      "Replication factor only applies to Reducers"
+    ],
+    "correct_answer": "If all nodes holding a block's replicas fail at once, that block becomes unavailable"
+  },
+  {
+    "id": "Q10",
+    "topic": "Scaling",
+    "difficulty": "hard",
+    "question": "Why doesn't doubling the number of DataNodes typically halve execution time exactly?",
+    "options": [
+      "Because HDFS ignores extra nodes",
+      "Because shuffle, network, and scheduling overhead limit linear speedup",
+      "Because block size automatically doubles too",
+      "Because replication factor decreases automatically"
+    ],
+    "correct_answer": "Because shuffle, network, and scheduling overhead limit linear speedup"
+  }
+]

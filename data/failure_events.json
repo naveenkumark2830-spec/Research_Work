@@ -1,0 +1,80 @@
+[
+  {
+    "event_id": "FAIL001",
+    "scenario_id": "SC03",
+    "failure_type": "datanode_failure",
+    "target_component": "DataNode_3",
+    "phase_at_failure": "map",
+    "time_of_failure_s": 22.0,
+    "affected_blocks": [
+      "Block_4",
+      "Block_9",
+      "Block_15"
+    ],
+    "replicas_still_available": true,
+    "job_outcome": "continued",
+    "recovery_action": "Tasks reading from DataNode_3 were rescheduled to read replicas on DataNode_1 and DataNode_5.",
+    "execution_time_impact_pct": 8.5,
+    "ai_explanation": "The job continued because each affected block still had healthy replicas on other DataNodes (replication factor 3). The NameNode redirected read requests to those replicas, and only the tasks tied to DataNode_3 needed to be rescheduled."
+  },
+  {
+    "event_id": "FAIL002",
+    "scenario_id": "SC09",
+    "failure_type": "nodemanager_failure",
+    "target_component": "NodeManager_5",
+    "phase_at_failure": "reduce",
+    "time_of_failure_s": 61.0,
+    "affected_blocks": [],
+    "replicas_still_available": true,
+    "job_outcome": "continued",
+    "recovery_action": "The ResourceManager detected the missed heartbeat, marked NodeManager_5 as lost, and rescheduled its in-progress reduce containers onto other available NodeManagers.",
+    "execution_time_impact_pct": 12.0,
+    "ai_explanation": "YARN's ResourceManager tracks NodeManager heartbeats. When NodeManager_5 stopped responding, its running containers were considered failed and the ResourceManager reassigned that work to healthy nodes with spare capacity, so the job did not restart from scratch."
+  },
+  {
+    "event_id": "FAIL003",
+    "scenario_id": "SC02",
+    "failure_type": "map_task_failure",
+    "target_component": "Map_Task_12",
+    "phase_at_failure": "map",
+    "time_of_failure_s": 18.0,
+    "affected_blocks": [
+      "Block_12"
+    ],
+    "replicas_still_available": true,
+    "job_outcome": "continued",
+    "recovery_action": "The failed map task was retried automatically on a different node (up to the configured maximum attempts).",
+    "execution_time_impact_pct": 3.0,
+    "ai_explanation": "A single task failure (e.g. due to a software error) does not fail the job. YARN's ApplicationMaster retries the task, and only if it fails repeatedly beyond the retry limit does the whole job fail."
+  },
+  {
+    "event_id": "FAIL004",
+    "scenario_id": "SC08",
+    "failure_type": "resource_shortage",
+    "target_component": "cluster_wide",
+    "phase_at_failure": "map",
+    "time_of_failure_s": 5.0,
+    "affected_blocks": [],
+    "replicas_still_available": true,
+    "job_outcome": "delayed",
+    "recovery_action": "Insufficient concurrent containers meant tasks queued instead of running in parallel, increasing the number of map waves.",
+    "execution_time_impact_pct": 35.0,
+    "ai_explanation": "This isn't a failure in the fault-tolerance sense - no data was lost - but the cluster did not have enough CPU/RAM to run all map tasks at once, so tasks executed in more sequential waves, extending total execution time."
+  },
+  {
+    "event_id": "FAIL005",
+    "scenario_id": "SC03",
+    "failure_type": "datanode_failure_multiple",
+    "target_component": "DataNode_2, DataNode_4",
+    "phase_at_failure": "map",
+    "time_of_failure_s": 30.0,
+    "affected_blocks": [
+      "Block_7"
+    ],
+    "replicas_still_available": false,
+    "job_outcome": "failed_partial",
+    "recovery_action": "Block_7 had replicas only on DataNode_2 and DataNode_4, both of which failed simultaneously, so that block became temporarily unavailable and its task could not complete until a node recovered.",
+    "execution_time_impact_pct": null,
+    "ai_explanation": "This is the deliberately unrealistic case the simulator must avoid overstating: even with replication, if enough replica-holding nodes fail at once, a specific block can become unavailable. The correct lesson is that fault tolerance is probabilistic, not absolute - it does not automatically mean 'no data is ever lost.'"
+  }
+]

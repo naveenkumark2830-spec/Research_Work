@@ -1,0 +1,3 @@
+comparison_id,scenario_id,changed_parameter,config_a_value,config_b_value,config_a_execution_time_s,config_b_execution_time_s,config_a_throughput_mb_s,config_b_throughput_mb_s,config_a_cpu_util_pct,config_b_cpu_util_pct,speedup_factor
+CMP001,SC04,num_datanodes,5,10,1495.0,895.0,342.47,572.07,100,100,1.67
+CMP002,SC10,replication_factor,2,3,375.0,399.0,409.6,384.96,100,100,0.94

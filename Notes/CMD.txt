@@ -1,0 +1,408 @@
+## COMMAND TO CHECK IF THE LLM IS WORKING ##
+
+backend/tests/test_llm_router.py      ------- python -m pytest tests\test_llm_router.py -v  -s
+backend/tests/test_ai_provider_integration.py    ------ python tests/test_ai_provider_integration.py
+User
+ ↓
+LLM(GEMIMI+GROQ)
+ ↓
+Text
+
+##------------------------------------------------------------------------------------------------------------------------------------------##
+
+python -m pytest tests\test_nlu.py -v
+User
+ ↓
+Teddy NLU
+ ↓
+LLM
+ ↓
+JSON
+ ↓
+Intent
+ ↓
+Parameters
+ ↓
+Validation
+
+
+##------------------------------------------------------------------------------------------------------------------------------------------##
+
+python -m pytest tests\test_action_executor.py -v
+python -m pytest tests\test_nlu.py tests\test_action_executor.py -v
+
+##------------------------------------------------------------------------------------------------------------------------------------------##
+
+USER
+ │
+ │ "Create a 1 GB HDFS file with 128 MB blocks, RF 3"
+ ▼
+NLU / Intent Layer                         ✅ DONE
+ │
+ ├── Intent → CREATE_HDFS_FILE
+ ├── file_size → 1024 MB
+ ├── block_size → 128 MB
+ └── replication → 3
+ │
+ ▼
+VALIDATOR                                  ✅ DONE
+ │
+ └── Checks whether the extracted parameters/action are valid
+ │
+ ▼
+ACTION EXECUTOR                            ✅ DONE
+ │
+ └── Converts validated intent into an executable HDFS action
+ │
+ ▼
+REAL HDFS SIMULATION ENGINE                🔄 NEXT
+ │
+ ├── NameNode
+ ├── DataNodes
+ ├── Blocks
+ ├── Block placement
+ ├── Replication
+ ├── Failures/recovery
+ └── Event generation
+ │
+ ▼
+CURRENT SIMULATION STATE
+ │
+ ├── files
+ ├── blocks
+ ├── replicas
+ ├── DataNode status
+ └── events
+
+###.venv\Scripts\python.exe -c "from app.services.hdfs_service import HDFSService; import inspect; print('create_cluster:', inspect.signature(HDFSService.create_cluster)); print('write_file:', inspect.signature(HDFSService.write_file)); print('kill_datanode:', inspect.signature(HDFSService.kill_datanode)); print('recover:', inspect.signature(HDFSService.recover_under_replicated_blocks)); print('get_hdfs_cluster_state:', inspect.signature(HDFSService.get_hdfs_cluster_state))"python -m pytest tests\test_action_executor.py -v
+
+(.venv) C:\Users\navee\OneDrive\Attachments\Desktop\hadoop-ai-simulator\backend>
+##------------------------------------------------------------------------------------------------------------------------------------------##
+
+Here are the exact commands to run the tests from your `backend` directory in PowerShell:
+
+### 1. Test Real HDFS Executor Integration (Stage 6.1)
+```powershell
+.venv\Scripts\python.exe -m pytest tests/test_real_hdfs_executor_integration.py -v
+```
+
+### 2. Test Combined NLU & Executor Pipeline
+```powershell
+.venv\Scripts\python.exe -m pytest tests/test_nlu.py tests/test_action_executor.py tests/test_real_hdfs_executor_integration.py -v
+```
+
+### 3. Test Full AI & Orchestration Suite (37 tests)
+```powershell
+.venv\Scripts\python.exe -m pytest tests/test_llm_router.py tests/test_nlu.py tests/test_action_executor.py tests/test_real_hdfs_executor_integration.py tests/test_level7_ai_orchestrator.py -v
+```
+
+### 4. Run Entire Backend Test Suite
+```powershell
+.venv\Scripts\python.exe -m pytest -v
+```
+
+
+
+##------------------------------------------------------------------------------------------------------------------------------------------##
+
+RAGGGGGGGGGGGGGGGGGGGGGGGGGG
+
+2. RAG Index Build Output (python -m app.jarvis.build_rag_index)
+python -m pytest tests\test_rag.py -v
+.venv\Scripts\python.exe -c "from app.jarvis.rag import TeddyRAG; rag = TeddyRAG(); print(rag.build_context('What does NameNode do in HDFS?', top_k=2))"
+
+1. Do you need to run python -m app.jarvis.build_rag_index every time?
+NO. You only need to run build_rag_index ONCE (or whenever you add/change PDF notes in data/knowledge/).
+
+The 213 vector embeddings were processed and saved permanently to disk inside backend/data/chroma/.
+When TeddyRAG() is initialized during normal application runtime or test execution, ChromaDB opens the existing database instantly from disk in milliseconds.
+
+.venv\Scripts\python.exe -c "from app.jarvis.rag import TeddyRAG; rag = TeddyRAG(); print(rag.build_context('What does NameNode do in HDFS?', top_k=2))"
+
+
+
+Hadoop PDFs / notes
+        ↓
+Document extraction
+        ↓
+Chunking
+        ↓
+all-MiniLM-L6-v2 embeddings
+        ↓
+Chroma vector database
+        ↓
+213 indexed chunks
+        ↓
+User asks a Hadoop question
+        ↓
+Relevant chunks retrieved
+
+python tests\test_teddy_real.py
+python -m tests.test_teddy_real
+
+
+##------------------------------------------------------------------------------------------------------------------------------------------##
+FINAL CMD|
+
+Terminal 1 :
+cd backend
+.\.venv\Scripts\python.exe -m uvicorn app.main:app --reload
+
+Terminal 2 :
+
+cd frontend
+npm run dev
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+##------------------------------------------------------------------------------------------------------------------------------------------##
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+##------------------------------------------------------------------------------------------------------------------------------------------##
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+##------------------------------------------------------------------------------------------------------------------------------------------##
+
+
+
+
+
+
+##------------------------------------------------------------------------------------------------------------------------------------------##
+
+
+
+
+
+
+
+
+
+
+
+
+
+##------------------------------------------------------------------------------------------------------------------------------------------##
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+##------------------------------------------------------------------------------------------------------------------------------------------##
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+##------------------------------------------------------------------------------------------------------------------------------------------##
+
+
+
+
+
+
+
+##------------------------------------------------------------------------------------------------------------------------------------------##
+
+
+
+
+
+
+
+
+
+##------------------------------------------------------------------------------------------------------------------------------------------##
+
+
+
+
+
+
+
+
+
+
+
+
+
+##------------------------------------------------------------------------------------------------------------------------------------------##
+
+
+
+
+
+
+
+
+
+
+##------------------------------------------------------------------------------------------------------------------------------------------##
+
+
+
+
+
+
+
+
+
+
+##------------------------------------------------------------------------------------------------------------------------------------------##
+
+
+
+
+
+
+
+
+
+
+##------------------------------------------------------------------------------------------------------------------------------------------##
+
+
+
+
+
+
+
+
+
+
+
+
+
+##------------------------------------------------------------------------------------------------------------------------------------------##
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+##------------------------------------------------------------------------------------------------------------------------------------------##
+
+
+
+
+
+
+
+
+
+
+
+
+
+##------------------------------------------------------------------------------------------------------------------------------------------##
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+##------------------------------------------------------------------------------------------------------------------------------------------##
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+##------------------------------------------------------------------------------------------------------------------------------------------##

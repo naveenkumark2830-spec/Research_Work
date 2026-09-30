@@ -1,0 +1,28 @@
+Stage 7 → RAG
+          Your Hadoop knowledge/data
+                ↓
+          Chunk + embeddings
+                ↓
+          Vector store
+                ↓
+          Relevant knowledge
+
+Stage 8 → Teddy Orchestrator
+          RAG knowledge
+          + live HDFS state
+          + user question
+          + LLM
+                ↓
+          Teddy response + scene instructions
+
+Stage 9 → Dynamic Visualization
+          Scene generated from the actual
+          simulation state/question
+
+Stage 10 → Voice
+           Teddy speaks explanation
+           + interruption support
+
+Stage 11 → Frontend
+           Connect everything to the
+           full-screen Teddy interface

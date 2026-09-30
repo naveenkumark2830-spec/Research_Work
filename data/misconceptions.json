@@ -1,0 +1,62 @@
+[
+  {
+    "id": "MC01",
+    "student_statement": "The NameNode stores the actual file.",
+    "correction": "The NameNode primarily manages HDFS metadata (file-to-block mapping, block locations). The actual file blocks are stored on DataNodes.",
+    "component": "HDFS"
+  },
+  {
+    "id": "MC02",
+    "student_statement": "If one DataNode fails, all data on it is lost forever.",
+    "correction": "As long as at least one healthy replica of each block remains, the data is still accessible. Data is only truly lost if every replica-holding node for a given block fails.",
+    "component": "HDFS"
+  },
+  {
+    "id": "MC03",
+    "student_statement": "Doubling the number of DataNodes halves the execution time.",
+    "correction": "Adding nodes increases parallelism, but shuffle, network communication, and scheduling overhead mean speedup is usually sub-linear, not exactly proportional.",
+    "component": "Scaling"
+  },
+  {
+    "id": "MC04",
+    "student_statement": "The ResourceManager stores the data blocks.",
+    "correction": "The ResourceManager manages cluster compute resources and scheduling. It does not store data - that is HDFS's job (NameNode + DataNodes).",
+    "component": "YARN"
+  },
+  {
+    "id": "MC05",
+    "student_statement": "A Mapper and a Reducer run on the same machine for the same block.",
+    "correction": "Map tasks run near the data they process (data locality), but Reduce tasks pull shuffled intermediate data from many Mappers across the cluster, often on different machines.",
+    "component": "MapReduce"
+  },
+  {
+    "id": "MC06",
+    "student_statement": "Replication factor 3 means the file is split into 3 pieces.",
+    "correction": "Replication factor controls how many copies of each block exist, not how many pieces the file is split into. The number of blocks depends on file size divided by block size.",
+    "component": "HDFS"
+  },
+  {
+    "id": "MC07",
+    "student_statement": "Shuffle happens before the Map phase.",
+    "correction": "Shuffle and sort happen after Map tasks produce intermediate key-value pairs and before Reduce tasks consume them.",
+    "component": "MapReduce"
+  },
+  {
+    "id": "MC08",
+    "student_statement": "More CPU always means faster job completion.",
+    "correction": "CPU is one resource among several (memory, network, disk I/O). If another resource is the bottleneck (e.g. shuffle network traffic), adding CPU alone may not help.",
+    "component": "Performance"
+  },
+  {
+    "id": "MC09",
+    "student_statement": "A container in YARN is a fixed physical machine.",
+    "correction": "A container is a logical bundle of resources (CPU + memory) allocated on a NodeManager - multiple containers can run on the same physical node.",
+    "component": "YARN"
+  },
+  {
+    "id": "MC10",
+    "student_statement": "Increasing block size always improves performance.",
+    "correction": "Larger blocks reduce metadata overhead and can improve throughput for large files, but very large blocks reduce parallelism (fewer, bigger splits) and can slow down small jobs.",
+    "component": "HDFS"
+  }
+]
